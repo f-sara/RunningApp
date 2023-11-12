@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import Alamofire
+
+func getWeatherData(for lat: Double, lon: Double, completion: @escaping (Result<WeatherData, Error>) -> Void) {
+    let apiKey = "APIキー"
+    let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&units=metric"
+
+    AF.request(url).validate().responseDecodable(of: WeatherData.self) { response in
+        switch response.result {
+        case .success(let weatherData):
+            completion(.success(weatherData))
+        case .failure(let error):
+            completion(.failure(error))
+        }
+    }
+}
