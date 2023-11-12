@@ -12,6 +12,7 @@
 		8B6C53D12AE8A2480039B467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6C53D02AE8A2480039B467 /* Assets.xcassets */; };
 		8B6C53D42AE8A2480039B467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6C53D32AE8A2480039B467 /* Preview Assets.xcassets */; };
 		8B6C54052AE9E5090039B467 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C54042AE9E5090039B467 /* HomeView.swift */; };
+		8B995E902B0072F6000FAA27 /* WeatherShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995E8F2B0072F6000FAA27 /* WeatherShowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		8B6C53D02AE8A2480039B467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B6C53D32AE8A2480039B467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B6C54042AE9E5090039B467 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8B995E8F2B0072F6000FAA27 /* WeatherShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherShowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,7 @@
 		8B6C53CB2AE8A2470039B467 /* RunningApp */ = {
 			isa = PBXGroup;
 			children = (
-				8B6C54032AE8DF500039B467 /* Presenter */,
+				8B6C54032AE8DF500039B467 /* Controller */,
 				8B6C54022AE8DF330039B467 /* View */,
 				8B6C54012AE8DF2E0039B467 /* Model */,
 				8B6C53CC2AE8A2470039B467 /* RunningAppApp.swift */,
@@ -88,11 +90,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8B6C54032AE8DF500039B467 /* Presenter */ = {
+		8B6C54032AE8DF500039B467 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Presenter;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		8B6C54062AE9F74B0039B467 /* Screen */ = {
@@ -106,6 +108,7 @@
 		8B6C54072AE9F7590039B467 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B995E8F2B0072F6000FAA27 /* WeatherShowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B995E902B0072F6000FAA27 /* WeatherShowView.swift in Sources */,
 				8B6C54052AE9E5090039B467 /* HomeView.swift in Sources */,
 				8B6C53CF2AE8A2470039B467 /* ContentView.swift in Sources */,
 				8B6C53CD2AE8A2470039B467 /* RunningAppApp.swift in Sources */,
