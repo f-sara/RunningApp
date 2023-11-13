@@ -9,7 +9,27 @@ import SwiftUI
 
 struct StartButtonView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            VStack(spacing: 2.5) {
+                Image(systemName: "figure.walk.motion")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 45, height: 45)
+                    .foregroundColor(Color.blue)
+
+                Text("計測")
+                    .font(.system(size: 20))
+                    .foregroundColor(Color.blue)
+                    .bold()
+            }
+        }
+        .frame(width: 90, height: 85)
+        .background(Color.white)
+        .cornerRadius(35)
+        .overlay(
+            RoundedRectangle(cornerRadius: 35)
+                .stroke(Color.blue, lineWidth: 2.5)
+        )
     }
 }
 
