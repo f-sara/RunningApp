@@ -17,6 +17,8 @@
 		8B995E962B0075D8000FAA27 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995E952B0075D8000FAA27 /* WeatherAPI.swift */; };
 		8B995E992B00766A000FAA27 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B995E982B00766A000FAA27 /* Alamofire */; };
 		8B995E9D2B01BD6E000FAA27 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995E9C2B01BD6E000FAA27 /* WeatherController.swift */; };
+		8B995E9F2B01F0B4000FAA27 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995E9E2B01F0B4000FAA27 /* StartButtonView.swift */; };
+		8B995EA12B01F294000FAA27 /* HomeMemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA02B01F294000FAA27 /* HomeMemoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,7 @@
 		8B995E952B0075D8000FAA27 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		8B995E9C2B01BD6E000FAA27 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		8B995E9E2B01F0B4000FAA27 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		8B995EA02B01F294000FAA27 /* HomeMemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMemoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,7 @@
 			children = (
 				8B995E8F2B0072F6000FAA27 /* WeatherShowView.swift */,
 				8B995E9E2B01F0B4000FAA27 /* StartButtonView.swift */,
+				8B995EA02B01F294000FAA27 /* HomeMemoryView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -220,6 +224,7 @@
 			files = (
 				8B995E902B0072F6000FAA27 /* WeatherShowView.swift in Sources */,
 				8B995E942B0074C5000FAA27 /* WeatherData.swift in Sources */,
+				8B995EA12B01F294000FAA27 /* HomeMemoryView.swift in Sources */,
 				8B6C54052AE9E5090039B467 /* HomeView.swift in Sources */,
 				8B995E962B0075D8000FAA27 /* WeatherAPI.swift in Sources */,
 				8B6C53CF2AE8A2470039B467 /* ContentView.swift in Sources */,
