@@ -20,6 +20,7 @@
 		8B995E9F2B01F0B4000FAA27 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995E9E2B01F0B4000FAA27 /* StartButtonView.swift */; };
 		8B995EA12B01F294000FAA27 /* HomeMemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA02B01F294000FAA27 /* HomeMemoryView.swift */; };
 		8B995EA52B01F88E000FAA27 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA42B01F88E000FAA27 /* CheckView.swift */; };
+		8B995EA72B02010F000FAA27 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA62B02010F000FAA27 /* RecordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8B995E9E2B01F0B4000FAA27 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		8B995EA02B01F294000FAA27 /* HomeMemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMemoryView.swift; sourceTree = "<group>"; };
 		8B995EA42B01F88E000FAA27 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
+		8B995EA62B02010F000FAA27 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +71,11 @@
 		8B6C53CB2AE8A2470039B467 /* RunningApp */ = {
 			isa = PBXGroup;
 			children = (
+				8B6C53CC2AE8A2470039B467 /* RunningAppApp.swift */,
+				8B6C53CE2AE8A2470039B467 /* ContentView.swift */,
 				8B6C54032AE8DF500039B467 /* Controller */,
 				8B6C54022AE8DF330039B467 /* View */,
 				8B6C54012AE8DF2E0039B467 /* Model */,
-				8B6C53CC2AE8A2470039B467 /* RunningAppApp.swift */,
-				8B6C53CE2AE8A2470039B467 /* ContentView.swift */,
 				8B6C53D02AE8A2480039B467 /* Assets.xcassets */,
 				8B6C53D22AE8A2480039B467 /* Preview Content */,
 			);
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				8B6C54042AE9E5090039B467 /* HomeView.swift */,
+				8B995EA62B02010F000FAA27 /* RecordView.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				8B995E902B0072F6000FAA27 /* WeatherShowView.swift in Sources */,
 				8B995E942B0074C5000FAA27 /* WeatherData.swift in Sources */,
 				8B995EA12B01F294000FAA27 /* HomeMemoryView.swift in Sources */,
+				8B995EA72B02010F000FAA27 /* RecordView.swift in Sources */,
 				8B6C54052AE9E5090039B467 /* HomeView.swift in Sources */,
 				8B995E962B0075D8000FAA27 /* WeatherAPI.swift in Sources */,
 				8B6C53CF2AE8A2470039B467 /* ContentView.swift in Sources */,
