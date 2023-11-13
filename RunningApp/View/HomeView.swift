@@ -8,8 +8,46 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var showSheet: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color("white")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.top)
+
+            VStack {
+                WeatherShowView(progress: 0.744)
+                    .frame(maxWidth: 250, maxHeight: 250)
+                    .padding(.all, 30)
+
+                ZStack {
+                    ScrollView {
+                        HStack(spacing: 21){
+                            HomeMemoryView(whenThisData: .beforeDay, workThisLevel: .max)
+                            HomeMemoryView(whenThisData: .today, workThisLevel: .notMax)
+                        }
+                    }
+
+                    Button {
+                        showSheet.toggle()
+                    } label: {
+                        StartButtonView()
+                            .background(
+                                Color.gray.opacity(0.3)
+                                    .cornerRadius(30)
+                                    .shadow(color: Color.gray.opacity(0.2), radius: 30)
+                                    .blur(radius: 3)
+                            )
+                    }
+                    .padding(.top, 250)
+                    .sheet(isPresented: $showSheet) {
+                        CheckView()
+                    }
+                }
+
+            }
+            .navigationTitle("ホーム")
+        }
     }
 }
 
