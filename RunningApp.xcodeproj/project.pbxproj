@@ -19,6 +19,7 @@
 		8B995E9D2B01BD6E000FAA27 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995E9C2B01BD6E000FAA27 /* WeatherController.swift */; };
 		8B995E9F2B01F0B4000FAA27 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995E9E2B01F0B4000FAA27 /* StartButtonView.swift */; };
 		8B995EA12B01F294000FAA27 /* HomeMemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA02B01F294000FAA27 /* HomeMemoryView.swift */; };
+		8B995EA52B01F88E000FAA27 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA42B01F88E000FAA27 /* CheckView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8B995E9C2B01BD6E000FAA27 /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		8B995E9E2B01F0B4000FAA27 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		8B995EA02B01F294000FAA27 /* HomeMemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMemoryView.swift; sourceTree = "<group>"; };
+		8B995EA42B01F88E000FAA27 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,8 @@
 		8B6C54062AE9F74B0039B467 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				8B6C54042AE9E5090039B467 /* HomeView.swift */,
+				8B995EA22B01F7DD000FAA27 /* Main */,
+				8B995EA32B01F7EE000FAA27 /* Measurement */,
 			);
 			name = Screen;
 			sourceTree = "<group>";
@@ -144,6 +147,22 @@
 				8B995E952B0075D8000FAA27 /* WeatherAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		8B995EA22B01F7DD000FAA27 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8B6C54042AE9E5090039B467 /* HomeView.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		8B995EA32B01F7EE000FAA27 /* Measurement */ = {
+			isa = PBXGroup;
+			children = (
+				8B995EA42B01F88E000FAA27 /* CheckView.swift */,
+			);
+			name = Measurement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +250,7 @@
 				8B995E9F2B01F0B4000FAA27 /* StartButtonView.swift in Sources */,
 				8B995E9D2B01BD6E000FAA27 /* WeatherController.swift in Sources */,
 				8B6C53CD2AE8A2470039B467 /* RunningAppApp.swift in Sources */,
+				8B995EA52B01F88E000FAA27 /* CheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
