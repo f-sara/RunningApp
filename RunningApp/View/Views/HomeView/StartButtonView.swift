@@ -9,27 +9,28 @@ import SwiftUI
 
 struct StartButtonView: View {
     var body: some View {
-        VStack(spacing: 0) {
-            VStack(spacing: 2.5) {
-                Image(systemName: "figure.walk.motion")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 45, height: 45)
-                    .foregroundColor(Color.blue)
+        VStack(spacing: 4) {
+            Image(systemName: "location.north.line.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 42, height: 42)
+                .foregroundColor(Color.green)
 
-                Text("計測")
-                    .font(.system(size: 20))
-                    .foregroundColor(Color.blue)
-                    .bold()
-            }
+            Text("ルートを記録")
+                .font(.system(size: 12))
+                .foregroundColor(Color.green)
+                .bold()
+                .padding(.bottom, 10)
         }
-        .frame(width: 90, height: 85)
+        .frame(width: 90, height: 90)
         .background(Color.white)
-        .cornerRadius(35)
+        .cornerRadius(90)
         .overlay(
-            RoundedRectangle(cornerRadius: 35)
-                .stroke(Color.blue, lineWidth: 2.5)
+            RoundedRectangle(cornerRadius: 90)
+                .stroke(Color.green, lineWidth: 1.5)
+            
         )
+
     }
 }
 
