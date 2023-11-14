@@ -33,10 +33,9 @@ struct HomeView: View {
                     } label: {
                         StartButtonView()
                             .background(
-                                Color.gray.opacity(0.3)
-                                    .cornerRadius(30)
-                                    .shadow(color: Color.gray.opacity(0.2), radius: 30)
-                                    .blur(radius: 3)
+                                Color.gray.opacity(0.8)
+                                    .cornerRadius(90)
+                                    .shadow(color: Color.gray, radius: 3, x: 1.5, y: 1.5)
                             )
                     }
                     .padding(.top, 250)
