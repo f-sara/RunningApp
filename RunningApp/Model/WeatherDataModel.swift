@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct WeatherData: Codable {
+struct WeatherModel {
+    var weatherScore: Double
+    var weatherImageURL: String
+}
+
+struct WeatherDataModel: Codable {
     let weather: [Weather]
     let main: Main
 
@@ -17,7 +22,12 @@ struct WeatherData: Codable {
     }
 
     struct Main: Codable {
-        let temperature: Double
+        let temp: Double
         let humidity: Double
+    }
+
+    init(weather: [Weather], main: Main) {
+        self.weather = weather
+        self.main = main
     }
 }
