@@ -16,17 +16,11 @@ struct HomeView: View {
                 .edgesIgnoringSafeArea(.top)
 
             VStack {
-                WeatherShowView(progress: 0.744)
+                WeatherShowView(weatherViewModel: WeatherViewModel())
                     .frame(maxWidth: 250, maxHeight: 250)
                     .padding(.all, 30)
 
                 ZStack {
-                    ScrollView {
-                        HStack(spacing: 21){
-                            HomeMemoryView(whenThisData: .beforeDay, workThisLevel: .max)
-                            HomeMemoryView(whenThisData: .today, workThisLevel: .notMax)
-                        }
-                    }
 
                     Button {
                         showSheet.toggle()

@@ -8,29 +8,14 @@
 import SwiftUI
 
 struct WeatherShowView: View {
-    @State var weatherData: WeatherData?
-    @State var weatherScore: Double = 0.0
-    @State var weatherImageURL: String = ""
-    private let latitude = 35.6895
-    private let longitude = 139.6917
-
-    private let weatherController = WeatherController()
-
-    var progressColor: Color {
-        if weatherScore < 70 {
-            return Color.blue.opacity(0.8)
-        } else if weatherScore < 75 {
-            return Color.green.opacity(0.8)
-        } else if weatherScore < 80 {
-            return Color.yellow
-        } else if weatherScore < 85 {
-            return Color.red.opacity(0.7)
-        } else {
-            return Color.purple.opacity(0.8)
-        }
+    @StateObject var weatherViewModel: WeatherViewModel
+    
+    var progress: CGFloat {
+        guard let weatherScore = weatherViewModel.otherWeatherData?.weatherScore else {return 0.0}
+        return CGFloat(weatherScore / 100)
     }
 
-    enum temperatureOrHumidity {
+    enum TemperatureOrHumidity {
         case temperature
         case humidity
 
@@ -62,16 +47,15 @@ struct WeatherShowView: View {
         }
     }
 
-    @State public var progress: CGFloat
-
     var body: some View {
         CircleView()
             .onAppear {
-                weatherController.fetchWeatherData(latitude: latitude, longitude: longitude)
+                weatherViewModel.fetchWeatherData()
             }
     } // body
 
     func CircleView() -> some View {
+
         ZStack {
             Circle()
                 .fill(Color.white)
@@ -79,19 +63,19 @@ struct WeatherShowView: View {
             Circle()
                 .stroke(lineWidth: 20)
                 .opacity(0.3)
-                .foregroundColor(progressColor)
+                .foregroundColor(progressColorSet(score: weatherViewModel.otherWeatherData?.weatherScore))
                 .frame(maxWidth: 300, maxHeight: 300)
                 .scaledToFit()
 
             Circle()
                 .trim(from: 0.0, to: min(progress, 1.0))
                 .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
-                .foregroundColor(progressColor)
+                .foregroundColor(progressColorSet(score: weatherViewModel.otherWeatherData?.weatherScore))
                 .rotationEffect(Angle(degrees: 270.0))
                 .frame(maxWidth: 300, maxHeight: 300)
                 .scaledToFit()
             VStack(spacing: 6) {
-                AsyncImage(url: URL(string: weatherImageURL)) { image in
+                AsyncImage(url: URL(string:weatherViewModel.otherWeatherData?.weatherImageURL ?? "")) { image in
                     image
                         .scaledToFit()
                         .frame(maxHeight: 100)
@@ -109,11 +93,11 @@ struct WeatherShowView: View {
                         Text("不快指数")
                             .font(.system(size: 14.5))
                             .foregroundColor(Color("darkblue"))
-                        if weatherScore != 0.0 {
+                        if let weatherScore = weatherViewModel.otherWeatherData?.weatherScore {
                             Text(String(format: "%.1f", weatherScore))
                                 .font(.system(size: 37))
                                 .bold()
-                                .foregroundColor(progressColor)
+                                .foregroundColor(progressColorSet(score: weatherScore))
                         } else {
                             Text("-")
                                 .font(.system(size: 37))
@@ -126,7 +110,23 @@ struct WeatherShowView: View {
             }
         }
     }
-    func temperatureOrHumidityView(tempOrHumidity: temperatureOrHumidity) -> some View {
+
+    func progressColorSet(score: Double?) -> Color {
+        guard let score = score else {return Color.clear}
+        if score < 70 {
+            return Color.blue.opacity(0.8)
+        } else if score < 75 {
+            return Color.green.opacity(0.8)
+        } else if score < 80 {
+            return Color.yellow
+        } else if score < 85 {
+            return Color.red.opacity(0.7)
+        } else {
+            return Color.purple.opacity(0.8)
+        }
+    }
+
+    func temperatureOrHumidityView(tempOrHumidity: TemperatureOrHumidity) -> some View {
         HStack(spacing: 8){
             tempOrHumidity.icon
                 .resizable()
@@ -138,15 +138,15 @@ struct WeatherShowView: View {
                 Text(tempOrHumidity.text)
                     .font(.system(size: 9))
                     .foregroundColor(Color("darkblue"))
-                if let weatherData = weatherData {
+                if let weatherData = weatherViewModel.weatherData?.main {
                     if tempOrHumidity == .humidity {
-                        let ceilHumidity = String(format: "%.0f", weatherData.main.humidity)
+                        let ceilHumidity = String(format: "%.0f", weatherData.humidity)
                         Text("\(ceilHumidity)%")
                             .font(.system(size: 17))
                             .bold()
                             .foregroundColor(Color("darkblue"))
                     } else if tempOrHumidity == .temperature {
-                        let ceilTemprature = String(format: "%.0f", weatherData.main.temperature)
+                        let ceilTemprature = String(format: "%.0f", weatherData.temp)
                         Text("\(ceilTemprature)℃")
                             .font(.system(size: 17))
                             .bold()
@@ -166,7 +166,7 @@ struct WeatherShowView: View {
 
 struct WeatherShowView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherShowView(progress: 0.744)
+        WeatherShowView(weatherViewModel: WeatherViewModel())
             .previewLayout(.sizeThatFits)
             .frame(maxWidth: 250, maxHeight: 250)
             .padding(.horizontal, 20)
