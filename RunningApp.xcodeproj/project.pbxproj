@@ -172,7 +172,6 @@
 			children = (
 				8B995E932B0074C5000FAA27 /* WeatherDataModel.swift */,
 				8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */,
-				8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -180,6 +179,7 @@
 		8BE16C682B09D38A0024ECA6 /* MemoryView */ = {
 			isa = PBXGroup;
 			children = (
+				8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */,
 			);
 			path = MemoryView;
 			sourceTree = "<group>";
