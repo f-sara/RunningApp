@@ -22,6 +22,7 @@
 		8B995EA92B020133000FAA27 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA82B020133000FAA27 /* MemoryView.swift */; };
 		8B995EAB2B02016E000FAA27 /* PersonalSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EAA2B02016E000FAA27 /* PersonalSettingView.swift */; };
 		8BE16C662B079FB00024ECA6 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */; };
+		8BE16C6D2B0A041E0024ECA6 /* HealthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		8B995EAA2B02016E000FAA27 /* PersonalSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingView.swift; sourceTree = "<group>"; };
 		8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
 		8BE16C692B09D3DC0024ECA6 /* RunningApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningApp.entitlements; sourceTree = "<group>"; };
+		8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				8B995E932B0074C5000FAA27 /* WeatherDataModel.swift */,
 				8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */,
+				8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				8BE16C662B079FB00024ECA6 /* WeatherAPIClient.swift in Sources */,
 				8B995E9D2B01BD6E000FAA27 /* WeatherViewModel.swift in Sources */,
 				8B6C53CD2AE8A2470039B467 /* RunningAppApp.swift in Sources */,
+				8BE16C6D2B0A041E0024ECA6 /* HealthDataModel.swift in Sources */,
 				8B995EA52B01F88E000FAA27 /* CheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
