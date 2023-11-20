@@ -6,15 +6,37 @@
 //
 
 import SwiftUI
+import Charts
 
 struct MemoryView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    @ObservedObject var memoryViewModel = MemoryViewModel()
 
-struct MemoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        MemoryView()
+    var body: some View {
+        VStack {
+            // Additional UI components if needed
+
+            Chart(memoryViewModel.chartDataModel) { dataRow in
+                // Your existing chart components
+                LineMark(
+                    x: .value("曜日", dataRow.day),
+                    y: .value("歩数", dataRow.value ?? 0)
+                )
+
+                PointMark (
+                    x: .value("曜日", dataRow.day),
+                    y: .value("歩数", dataRow.value ?? 0)
+                )
+            }
+            .frame(height: 300)
+            .onAppear {
+                memoryViewModel.onAppearMemoryView()
+            }
+        }
+    }
+
+    struct MemoryView_Previews: PreviewProvider {
+        static var previews: some View {
+            MemoryView()
+        }
     }
 }
