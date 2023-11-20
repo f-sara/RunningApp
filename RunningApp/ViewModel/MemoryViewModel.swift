@@ -12,37 +12,22 @@ final class MemoryViewModel: ObservableObject {
     @Published var chartDataModel: [ChartDataModel] = []
 
 
-    func updateLineData() {
+    func updateLineData(stepCounts: [Int]) {
         let today = Date()
         let calendar = Calendar.current
-        let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: today))!
-        var date = startOfWeek
+        let startDay = calendar.date(byAdding: .day, value: -6, to: today)!
+        var date = startDay
 
         var data: [ChartDataModel] = []
 
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd"
 
-        for _ in 0..<6 {
-            _ = calendar.component(.weekday, from: date)
-            let dayString = DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .none)
-            data.append(ChartDataModel(day: dayString, value: nil)) // You can set the actual values based on your data model
+
+        for (_, steps) in stepCounts.enumerated() {
+            let dayString = dateFormatter.string(from: date)
+            data.append(ChartDataModel(day: dayString, value: steps))
             date = calendar.date(byAdding: .day, value: 1, to: date)!
-        }
-
-        chartDataModel = data
-    }
-
-
-    func updateStepLineData(stepCounts: [Int]) {
-        var data: [ChartDataModel] = []
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd"
-
-        for (index, steps) in stepCounts.enumerated() {
-            let formattedDate = dateFormatter.string(from: Calendar.current.date(byAdding: .day, value: index, to: Date())!)
-            data.append(ChartDataModel(day: formattedDate, value: steps))
         }
 
         chartDataModel = data
@@ -52,7 +37,7 @@ final class MemoryViewModel: ObservableObject {
         healthDataModel.requestHealthAuthorization { success in
             if success {
                 self.healthDataModel.fetchStepsData { stepCounts in
-                    self.updateStepLineData(stepCounts: stepCounts)
+                    self.updateLineData(stepCounts: stepCounts)
                 }
             }
         }
