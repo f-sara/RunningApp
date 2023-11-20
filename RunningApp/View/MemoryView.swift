@@ -13,19 +13,26 @@ struct MemoryView: View {
 
     var body: some View {
         VStack {
-            // Additional UI components if needed
 
             Chart(memoryViewModel.chartDataModel) { dataRow in
-                // Your existing chart components
-                LineMark(
+
+                BarMark (
                     x: .value("曜日", dataRow.day),
                     y: .value("歩数", dataRow.value ?? 0)
                 )
+                .foregroundStyle(.cyan)
 
                 PointMark (
                     x: .value("曜日", dataRow.day),
                     y: .value("歩数", dataRow.value ?? 0)
                 )
+                .foregroundStyle(.green)
+
+                LineMark(
+                    x: .value("曜日", dataRow.day),
+                    y: .value("歩数", dataRow.value ?? 0)
+                )
+                .foregroundStyle(.green)
             }
             .frame(height: 300)
             .onAppear {
