@@ -1,17 +1,10 @@
-//
-//  HealthDataModel.swift
-//  RunningApp
-//
-//  Created by 藤井紗良 on 2023/11/19.
-//
-
 import Foundation
 import HealthKit
 
 struct HealthDataModel {
     var stepCounts: [Int] = []
 
-    func requestHealthAuthorization(completion: @escaping(Bool) -> Void) {
+    func requestHealthAuthorization(completion: @escaping (Bool) -> Void) {
         let readDataTypes = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!])
         HKHealthStore().requestAuthorization(toShare: nil, read: readDataTypes) { success, _ in
             completion(success)
@@ -21,7 +14,7 @@ struct HealthDataModel {
     func fetchStepsData(completion: @escaping ([Int]) -> Void) {
         var updatedModel = self  // Create a copy of the model
 
-        let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+        let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -6, to: Date())!
         let startDate = Calendar.current.startOfDay(for: oneWeekAgo)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
 
