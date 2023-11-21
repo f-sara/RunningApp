@@ -25,6 +25,7 @@
 		8BE16C6D2B0A041E0024ECA6 /* HealthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */; };
 		8BE16C6F2B0A0F380024ECA6 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */; };
 		8BE16C712B0AE4CE0024ECA6 /* ChartDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */; };
+		8BE16C762B0B2B980024ECA6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C752B0B2B980024ECA6 /* ChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
 		8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
 		8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataModel.swift; sourceTree = "<group>"; };
+		8BE16C752B0B2B980024ECA6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		8B6C54072AE9F7590039B467 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8BE16C722B0B2B3F0024ECA6 /* MemoryView */,
 				8B995E9A2B0077A2000FAA27 /* HomeView */,
 			);
 			path = Views;
@@ -186,6 +189,14 @@
 			children = (
 				8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */,
 				8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */,
+			);
+			path = MemoryView;
+			sourceTree = "<group>";
+		};
+		8BE16C722B0B2B3F0024ECA6 /* MemoryView */ = {
+			isa = PBXGroup;
+			children = (
+				8BE16C752B0B2B980024ECA6 /* ChartView.swift */,
 			);
 			path = MemoryView;
 			sourceTree = "<group>";
@@ -273,6 +284,7 @@
 				8B995EA72B02010F000FAA27 /* RecordView.swift in Sources */,
 				8B6C54052AE9E5090039B467 /* HomeView.swift in Sources */,
 				8B6C53CF2AE8A2470039B467 /* ContentView.swift in Sources */,
+				8BE16C762B0B2B980024ECA6 /* ChartView.swift in Sources */,
 				8BE16C6F2B0A0F380024ECA6 /* MemoryViewModel.swift in Sources */,
 				8B995E9F2B01F0B4000FAA27 /* StartButtonView.swift in Sources */,
 				8BE16C662B079FB00024ECA6 /* WeatherAPIClient.swift in Sources */,
