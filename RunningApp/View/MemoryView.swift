@@ -31,14 +31,17 @@ struct MemoryView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-                .padding()
+                .padding(.all, 30)
 
                 if dataType == .step {
                     ChartView(typeOfData: .step)
+                        .padding(.horizontal, 20)
                 } else if dataType == .kcal {
                     ChartView(typeOfData: .kcal)
+                        .padding(.horizontal, 20)
                 } else if dataType == .distance {
                     ChartView(typeOfData: .distance)
+                        .padding(.horizontal, 20)
                 }
             }
         }
