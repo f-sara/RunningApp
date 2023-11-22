@@ -6,15 +6,128 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ChartView: View {
+    @ObservedObject var memoryViewModel = MemoryViewModel()
+    @State var typeOfData: TypeOfData
+
+    enum TypeOfData {
+        case step
+        case kcal
+        case distance
+
+        var dataName: String {
+            switch self {
+            case .step:
+                return "歩数"
+            case .kcal:
+                return "消費カロリー"
+            case .distance:
+                return "移動距離"
+            }
+        }
+
+
+    }
+    
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(typeOfData.dataName)
+
+            switch typeOfData {
+            case .step:
+                Chart(memoryViewModel.stepDataModel) { dataRow in
+
+                    BarMark (
+                        x: .value("曜日", dataRow.day),
+                        y: .value(typeOfData.dataName, dataRow.step ?? 0)
+                    )
+                    .foregroundStyle(.cyan)
+
+                    PointMark (
+                        x: .value("曜日", dataRow.day),
+                        y: .value(typeOfData.dataName, dataRow.step ?? 0)
+                    )
+                    .foregroundStyle(.green)
+
+                    LineMark(
+                        x: .value("曜日", dataRow.day),
+                        y: .value(typeOfData.dataName, dataRow.step ?? 0)
+                    )
+                    .foregroundStyle(.green)
+                }
+                .frame(height: 300)
+                .onAppear {
+                    memoryViewModel.onAppearStepMemoryView()
+                }
+
+            case .kcal:
+                Chart(memoryViewModel.kcalDataModel) { dataRow in
+
+                    BarMark (
+                        x: .value("曜日", dataRow.day),
+                        y: .value(typeOfData.dataName, dataRow.kcal ?? 0)
+                    )
+                    .foregroundStyle(.cyan)
+
+                    PointMark (
+                        x: .value("曜日", dataRow.day),
+                        y: .value(typeOfData.dataName, dataRow.kcal ?? 0)
+                    )
+                    .foregroundStyle(.green)
+
+                    LineMark(
+                        x: .value("曜日", dataRow.day),
+                        y: .value(typeOfData.dataName, dataRow.kcal ?? 0)
+                    )
+                    .foregroundStyle(.green)
+                }
+                .frame(height: 300)
+                .onAppear {
+                    memoryViewModel.onAppearKcalMemoryView()
+                }
+                
+            case .distance:
+                Chart(memoryViewModel.distanceDataModel) { dataRow in
+
+                    BarMark (
+                        x: .value("曜日", dataRow.day),
+                        y: .value(typeOfData.dataName, dataRow.distance ?? 0)
+                    )
+                    .foregroundStyle(.cyan)
+
+                    PointMark (
+                        x: .value("曜日", dataRow.day),
+                        y: .value(typeOfData.dataName, dataRow.distance ?? 0)
+                    )
+                    .foregroundStyle(.green)
+
+                    LineMark(
+                        x: .value("曜日", dataRow.day),
+                        y: .value(typeOfData.dataName, dataRow.distance ?? 0)
+                    )
+                    .foregroundStyle(.green)
+                }
+                .frame(height: 300)
+                .onAppear {
+                    memoryViewModel.onAppearDistanceMemoryView()
+                }
+            }
+
+
+        }
     }
 }
 
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartView()
+        Group {
+            ChartView(typeOfData: .step)
+            ChartView(typeOfData: .kcal)
+            ChartView(typeOfData: .distance)
+        }
+        .previewLayout(.sizeThatFits)
     }
 }
