@@ -38,12 +38,6 @@ struct ChartView: View {
             case .step:
                 Chart(memoryViewModel.stepDataModel) { dataRow in
 
-                    BarMark (
-                        x: .value("曜日", dataRow.day),
-                        y: .value(typeOfData.dataName, dataRow.step ?? 0)
-                    )
-                    .foregroundStyle(.cyan)
-
                     PointMark (
                         x: .value("曜日", dataRow.day),
                         y: .value(typeOfData.dataName, dataRow.step ?? 0)
@@ -64,12 +58,6 @@ struct ChartView: View {
             case .kcal:
                 Chart(memoryViewModel.kcalDataModel) { dataRow in
 
-                    BarMark (
-                        x: .value("曜日", dataRow.day),
-                        y: .value(typeOfData.dataName, dataRow.kcal ?? 0)
-                    )
-                    .foregroundStyle(.cyan)
-
                     PointMark (
                         x: .value("曜日", dataRow.day),
                         y: .value(typeOfData.dataName, dataRow.kcal ?? 0)
@@ -89,12 +77,6 @@ struct ChartView: View {
                 
             case .distance:
                 Chart(memoryViewModel.distanceDataModel) { dataRow in
-
-                    BarMark (
-                        x: .value("曜日", dataRow.day),
-                        y: .value(typeOfData.dataName, dataRow.distance ?? 0)
-                    )
-                    .foregroundStyle(.cyan)
 
                     PointMark (
                         x: .value("曜日", dataRow.day),
