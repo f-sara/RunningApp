@@ -10,12 +10,36 @@ import Charts
 
 struct MemoryView: View {
 
+    enum DataType: String, CaseIterable, Identifiable {
+        case step = "歩数"
+        case kcal = "消費カロリー"
+        case distance = "移動距離"
+
+        var id: String {rawValue}
+    }
+
+
+    @State private var dataType = DataType.step
+
     var body: some View {
         ScrollView {
             VStack {
-                ChartView(typeOfData: .step)
-                ChartView(typeOfData: .kcal)
-                ChartView(typeOfData: .distance)
+                Picker("データ", selection: $dataType) {
+                    ForEach(DataType.allCases) {
+                        data in
+                        Text(data.rawValue).tag(data)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding()
+
+                if dataType == .step {
+                    ChartView(typeOfData: .step)
+                } else if dataType == .kcal {
+                    ChartView(typeOfData: .kcal)
+                } else if dataType == .distance {
+                    ChartView(typeOfData: .distance)
+                }
             }
         }
     }

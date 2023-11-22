@@ -34,8 +34,6 @@ struct ChartView: View {
 
     var body: some View {
         VStack {
-            Text(typeOfData.dataName)
-
             switch typeOfData {
             case .step:
                 Chart(memoryViewModel.stepDataModel) { dataRow in
