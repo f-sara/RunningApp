@@ -26,6 +26,7 @@
 		8BE16C6F2B0A0F380024ECA6 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */; };
 		8BE16C712B0AE4CE0024ECA6 /* ChartDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */; };
 		8BE16C762B0B2B980024ECA6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C752B0B2B980024ECA6 /* ChartView.swift */; };
+		8BE16C792B0D9C6C0024ECA6 /* ChartDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C782B0D9C6C0024ECA6 /* ChartDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataModel.swift; sourceTree = "<group>"; };
 		8BE16C752B0B2B980024ECA6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		8BE16C772B0CEACF0024ECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8BE16C782B0D9C6C0024ECA6 /* ChartDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				8BE16C752B0B2B980024ECA6 /* ChartView.swift */,
+				8BE16C782B0D9C6C0024ECA6 /* ChartDataView.swift */,
 			);
 			path = MemoryView;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				8B6C53CF2AE8A2470039B467 /* ContentView.swift in Sources */,
 				8BE16C762B0B2B980024ECA6 /* ChartView.swift in Sources */,
 				8BE16C6F2B0A0F380024ECA6 /* MemoryViewModel.swift in Sources */,
+				8BE16C792B0D9C6C0024ECA6 /* ChartDataView.swift in Sources */,
 				8B995E9F2B01F0B4000FAA27 /* StartButtonView.swift in Sources */,
 				8BE16C662B079FB00024ECA6 /* WeatherAPIClient.swift in Sources */,
 				8B995E9D2B01BD6E000FAA27 /* WeatherViewModel.swift in Sources */,
