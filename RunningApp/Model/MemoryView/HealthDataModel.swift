@@ -10,6 +10,8 @@ import HealthKit
 
 struct HealthDataModel {
     var stepCounts: [Int] = []
+    var kcalData: [Double] = []
+    var distanceData: [Double] = []
 
     func requestHealthAuthorization(completion: @escaping (Bool) -> Void) {
         let readDataTypes = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!,
@@ -20,7 +22,7 @@ struct HealthDataModel {
         }
     }
 
-    func fetchStepsData(completion: @escaping ([Int]) -> Void) {
+    func fetchStepsData(completion: @escaping (Result<[Int], Error>) -> Void) {
         var updatedModel = self  // Create a copy of the model
 
         let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -6, to: Date())!
@@ -33,9 +35,11 @@ struct HealthDataModel {
                                                 anchorDate: startDate,
                                                 intervalComponents: DateComponents(day: 1))
 
-        query.initialResultsHandler = { _, results, _ in
+        query.initialResultsHandler = { _, results, error in
             guard let statsCollection = results else {
-                completion(updatedModel.stepCounts)
+                if let error = error {
+                    completion(.failure(error))
+                }
                 return
             }
 
@@ -49,7 +53,7 @@ struct HealthDataModel {
             }
 
             DispatchQueue.main.async {
-                completion(updatedModel.stepCounts)
+                completion(.success(updatedModel.stepCounts))
                 print("stepCounts", updatedModel.stepCounts)
             }
         }

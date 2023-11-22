@@ -49,6 +49,7 @@
 		8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
 		8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataModel.swift; sourceTree = "<group>"; };
 		8BE16C752B0B2B980024ECA6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		8BE16C772B0CEACF0024ECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,7 @@
 		8B6C53CB2AE8A2470039B467 /* RunningApp */ = {
 			isa = PBXGroup;
 			children = (
+				8BE16C772B0CEACF0024ECA6 /* Info.plist */,
 				8BE16C692B09D3DC0024ECA6 /* RunningApp.entitlements */,
 				8B6C53CC2AE8A2470039B467 /* RunningAppApp.swift */,
 				8B6C53CE2AE8A2470039B467 /* ContentView.swift */,
@@ -425,6 +427,7 @@
 				DEVELOPMENT_TEAM = RGJJ9A3WD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunningApp/Info.plist;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "歩数、消費カロリー、運動距離を取得します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -456,6 +459,7 @@
 				DEVELOPMENT_TEAM = RGJJ9A3WD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunningApp/Info.plist;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "歩数、消費カロリー、運動距離を取得します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
