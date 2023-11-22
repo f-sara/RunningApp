@@ -33,7 +33,10 @@ struct ChartView: View {
     
 
     var body: some View {
-        VStack {
+        ZStack {
+            Color(.white)
+                .frame(width: 380, height: 300)
+
             switch typeOfData {
             case .step:
                 Chart(memoryViewModel.stepDataModel) { dataRow in

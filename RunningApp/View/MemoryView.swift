@@ -22,8 +22,12 @@ struct MemoryView: View {
     @State private var dataType = DataType.step
 
     var body: some View {
-        ScrollView {
-            VStack {
+        ZStack {
+            Color("white")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .edgesIgnoringSafeArea(.top)
+            
+            VStack(spacing: 0) {
                 Picker("データ", selection: $dataType) {
                     ForEach(DataType.allCases) {
                         data in
@@ -33,18 +37,26 @@ struct MemoryView: View {
                 .pickerStyle(.segmented)
                 .padding(.all, 30)
 
-                if dataType == .step {
-                    ChartView(typeOfData: .step)
-                        .padding(.horizontal, 20)
-                } else if dataType == .kcal {
-                    ChartView(typeOfData: .kcal)
-                        .padding(.horizontal, 20)
-                } else if dataType == .distance {
-                    ChartView(typeOfData: .distance)
-                        .padding(.horizontal, 20)
+                ScrollView {
+                    VStack{
+                        if dataType == .step {
+                            ChartView(typeOfData: .step)
+                                .padding(.horizontal, 20)
+                                .padding(.top, 3)
+                        } else if dataType == .kcal {
+                            ChartView(typeOfData: .kcal)
+                                .padding(.horizontal, 20)
+                                .padding(.top, 3)
+                        } else if dataType == .distance {
+                            ChartView(typeOfData: .distance)
+                                .padding(.horizontal, 20)
+                                .padding(.top, 3)
+                        }
+                    }
                 }
             }
         }
+
     }
 
     struct MemoryView_Previews: PreviewProvider {
