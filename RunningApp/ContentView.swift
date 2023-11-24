@@ -19,13 +19,13 @@ struct ContentView: View {
 
                 RecordView()
                     .tabItem {
-                        Image(systemName: "list.clipboard")
+                        Image(systemName: "map")
                         Text("履歴")
                     }
 
                 MemoryView()
                     .tabItem {
-                        Image(systemName: "pencil.line")
+                        Image(systemName: "list.clipboard")
                         Text("記録")
                     }
 

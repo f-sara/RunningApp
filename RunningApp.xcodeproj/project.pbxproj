@@ -22,6 +22,11 @@
 		8B995EA92B020133000FAA27 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA82B020133000FAA27 /* MemoryView.swift */; };
 		8B995EAB2B02016E000FAA27 /* PersonalSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EAA2B02016E000FAA27 /* PersonalSettingView.swift */; };
 		8BE16C662B079FB00024ECA6 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */; };
+		8BE16C6D2B0A041E0024ECA6 /* HealthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */; };
+		8BE16C6F2B0A0F380024ECA6 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */; };
+		8BE16C712B0AE4CE0024ECA6 /* ChartDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */; };
+		8BE16C762B0B2B980024ECA6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C752B0B2B980024ECA6 /* ChartView.swift */; };
+		8BE16C792B0D9C6C0024ECA6 /* ChartDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C782B0D9C6C0024ECA6 /* ChartDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,13 @@
 		8B995EA82B020133000FAA27 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		8B995EAA2B02016E000FAA27 /* PersonalSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingView.swift; sourceTree = "<group>"; };
 		8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
+		8BE16C692B09D3DC0024ECA6 /* RunningApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningApp.entitlements; sourceTree = "<group>"; };
+		8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
+		8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
+		8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataModel.swift; sourceTree = "<group>"; };
+		8BE16C752B0B2B980024ECA6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		8BE16C772B0CEACF0024ECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8BE16C782B0D9C6C0024ECA6 /* ChartDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,8 @@
 		8B6C53CB2AE8A2470039B467 /* RunningApp */ = {
 			isa = PBXGroup;
 			children = (
+				8BE16C772B0CEACF0024ECA6 /* Info.plist */,
+				8BE16C692B09D3DC0024ECA6 /* RunningApp.entitlements */,
 				8B6C53CC2AE8A2470039B467 /* RunningAppApp.swift */,
 				8B6C53CE2AE8A2470039B467 /* ContentView.swift */,
 				8B6C54032AE8DF500039B467 /* ViewModel */,
@@ -95,8 +109,8 @@
 		8B6C54012AE8DF2E0039B467 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8B995E932B0074C5000FAA27 /* WeatherDataModel.swift */,
-				8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */,
+				8BE16C672B09D3540024ECA6 /* HomeView */,
+				8BE16C682B09D38A0024ECA6 /* MemoryView */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8B995E9C2B01BD6E000FAA27 /* WeatherViewModel.swift */,
+				8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -130,6 +145,7 @@
 		8B6C54072AE9F7590039B467 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8BE16C722B0B2B3F0024ECA6 /* MemoryView */,
 				8B995E9A2B0077A2000FAA27 /* HomeView */,
 			);
 			path = Views;
@@ -161,6 +177,33 @@
 				8B995EA42B01F88E000FAA27 /* CheckView.swift */,
 			);
 			name = Measurement;
+			sourceTree = "<group>";
+		};
+		8BE16C672B09D3540024ECA6 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				8B995E932B0074C5000FAA27 /* WeatherDataModel.swift */,
+				8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		8BE16C682B09D38A0024ECA6 /* MemoryView */ = {
+			isa = PBXGroup;
+			children = (
+				8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */,
+				8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */,
+			);
+			path = MemoryView;
+			sourceTree = "<group>";
+		};
+		8BE16C722B0B2B3F0024ECA6 /* MemoryView */ = {
+			isa = PBXGroup;
+			children = (
+				8BE16C752B0B2B980024ECA6 /* ChartView.swift */,
+				8BE16C782B0D9C6C0024ECA6 /* ChartDataView.swift */,
+			);
+			path = MemoryView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,10 +289,15 @@
 				8B995EA72B02010F000FAA27 /* RecordView.swift in Sources */,
 				8B6C54052AE9E5090039B467 /* HomeView.swift in Sources */,
 				8B6C53CF2AE8A2470039B467 /* ContentView.swift in Sources */,
+				8BE16C762B0B2B980024ECA6 /* ChartView.swift in Sources */,
+				8BE16C6F2B0A0F380024ECA6 /* MemoryViewModel.swift in Sources */,
+				8BE16C792B0D9C6C0024ECA6 /* ChartDataView.swift in Sources */,
 				8B995E9F2B01F0B4000FAA27 /* StartButtonView.swift in Sources */,
 				8BE16C662B079FB00024ECA6 /* WeatherAPIClient.swift in Sources */,
 				8B995E9D2B01BD6E000FAA27 /* WeatherViewModel.swift in Sources */,
+				8BE16C712B0AE4CE0024ECA6 /* ChartDataModel.swift in Sources */,
 				8B6C53CD2AE8A2470039B467 /* RunningAppApp.swift in Sources */,
+				8BE16C6D2B0A041E0024ECA6 /* HealthDataModel.swift in Sources */,
 				8B995EA52B01F88E000FAA27 /* CheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,11 +424,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RunningApp/RunningApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RunningApp/Preview Content\"";
+				DEVELOPMENT_TEAM = RGJJ9A3WD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunningApp/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "歩数、消費カロリー、運動距離を取得します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -404,11 +456,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RunningApp/RunningApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RunningApp/Preview Content\"";
+				DEVELOPMENT_TEAM = RGJJ9A3WD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunningApp/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "歩数、消費カロリー、運動距離を取得します。";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

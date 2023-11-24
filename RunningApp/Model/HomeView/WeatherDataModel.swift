@@ -26,8 +26,4 @@ struct WeatherDataModel: Codable {
         let humidity: Double
     }
 
-    init(weather: [Weather], main: Main) {
-        self.weather = weather
-        self.main = main
-    }
 }
