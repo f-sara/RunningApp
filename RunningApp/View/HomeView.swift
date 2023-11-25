@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct HomeView: View {
-    @State var showSheet: Bool = false
+    @State private var showSheet: Bool = false
+    @State private var locationManager = CLLocationManager()
+
     var body: some View {
         ZStack{
             Color("white")
@@ -40,6 +43,9 @@ struct HomeView: View {
 
             }
             .navigationTitle("ホーム")
+        }
+        .onAppear{
+            locationManager.requestWhenInUseAuthorization()
         }
     }
 }
