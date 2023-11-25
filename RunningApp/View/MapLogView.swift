@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct MapLogView: View {
+    @Environment(\.dismiss) var dismiss
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button {
+                dismiss()
+                dismiss()
+            } label: {
+                Text("終了")
+            }
+        }
+        .interactiveDismissDisabled()
+
     }
 }
 
