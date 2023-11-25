@@ -27,6 +27,7 @@
 		8BE16C712B0AE4CE0024ECA6 /* ChartDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C702B0AE4CE0024ECA6 /* ChartDataModel.swift */; };
 		8BE16C762B0B2B980024ECA6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C752B0B2B980024ECA6 /* ChartView.swift */; };
 		8BE16C792B0D9C6C0024ECA6 /* ChartDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C782B0D9C6C0024ECA6 /* ChartDataView.swift */; };
+		8BE16C8F2B11EAA30024ECA6 /* MapLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C8E2B11EAA30024ECA6 /* MapLogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		8BE16C752B0B2B980024ECA6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		8BE16C772B0CEACF0024ECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8BE16C782B0D9C6C0024ECA6 /* ChartDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataView.swift; sourceTree = "<group>"; };
+		8BE16C8E2B11EAA30024ECA6 /* MapLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				8B995EA42B01F88E000FAA27 /* CheckView.swift */,
+				8BE16C8E2B11EAA30024ECA6 /* MapLogView.swift */,
 			);
 			name = Measurement;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				8B995EAB2B02016E000FAA27 /* PersonalSettingView.swift in Sources */,
 				8B995E902B0072F6000FAA27 /* WeatherShowView.swift in Sources */,
+				8BE16C8F2B11EAA30024ECA6 /* MapLogView.swift in Sources */,
 				8B995E942B0074C5000FAA27 /* WeatherDataModel.swift in Sources */,
 				8B995EA92B020133000FAA27 /* MemoryView.swift in Sources */,
 				8B995EA72B02010F000FAA27 /* RecordView.swift in Sources */,
