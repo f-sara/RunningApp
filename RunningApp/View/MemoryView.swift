@@ -35,23 +35,26 @@ struct MemoryView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-                .padding(.all, 30)
+                .padding(.horizontal, 30)
+                .padding(.vertical, 20)
+
+                if dataType == .step {
+                    ChartView(typeOfData: .step)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 3)
+                } else if dataType == .kcal {
+                    ChartView(typeOfData: .kcal)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 3)
+                } else if dataType == .distance {
+                    ChartView(typeOfData: .distance)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 3)
+                }
 
                 ScrollView {
                     VStack{
-                        if dataType == .step {
-                            ChartView(typeOfData: .step)
-                                .padding(.horizontal, 20)
-                                .padding(.top, 3)
-                        } else if dataType == .kcal {
-                            ChartView(typeOfData: .kcal)
-                                .padding(.horizontal, 20)
-                                .padding(.top, 3)
-                        } else if dataType == .distance {
-                            ChartView(typeOfData: .distance)
-                                .padding(.horizontal, 20)
-                                .padding(.top, 3)
-                        }
+
                     }
                 }
             }
