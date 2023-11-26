@@ -10,14 +10,17 @@ import SwiftUI
 struct ResultView: View {
     @Environment(\.dismiss) var dismiss
     var body: some View {
-        Button {
-            dismiss()
-            dismiss()
-            dismiss()
-        } label: {
-            Text("終了")
+        VStack {
+            Button {
+                dismiss()
+                dismiss()
+                dismiss()
+            } label: {
+                Text("終了")
+            }
         }
-
+        .interactiveDismissDisabled()
+        .navigationBarBackButtonHidden(true)
     }
 }
 
