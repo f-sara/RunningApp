@@ -31,6 +31,7 @@
 		8BE16C912B11F6AB0024ECA6 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C902B11F6AB0024ECA6 /* ResultView.swift */; };
 		8BE16C952B1309EB0024ECA6 /* MapLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C942B1309EB0024ECA6 /* MapLogViewModel.swift */; };
 		8BE16C982B1321C80024ECA6 /* FinishButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C972B1321C80024ECA6 /* FinishButtonView.swift */; };
+		8BE16C9A2B1348230024ECA6 /* TopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C992B1348230024ECA6 /* TopTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		8BE16C902B11F6AB0024ECA6 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		8BE16C942B1309EB0024ECA6 /* MapLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLogViewModel.swift; sourceTree = "<group>"; };
 		8BE16C972B1321C80024ECA6 /* FinishButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishButtonView.swift; sourceTree = "<group>"; };
+		8BE16C992B1348230024ECA6 /* TopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			children = (
 				8BE16C752B0B2B980024ECA6 /* ChartView.swift */,
 				8BE16C782B0D9C6C0024ECA6 /* ChartDataView.swift */,
+				8BE16C992B1348230024ECA6 /* TopTabView.swift */,
 			);
 			path = MemoryView;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				8BE16C8F2B11EAA30024ECA6 /* MapLogView.swift in Sources */,
 				8BE16C912B11F6AB0024ECA6 /* ResultView.swift in Sources */,
 				8B995E942B0074C5000FAA27 /* WeatherDataModel.swift in Sources */,
+				8BE16C9A2B1348230024ECA6 /* TopTabView.swift in Sources */,
 				8B995EA92B020133000FAA27 /* MemoryView.swift in Sources */,
 				8B995EA72B02010F000FAA27 /* RecordView.swift in Sources */,
 				8B6C54052AE9E5090039B467 /* HomeView.swift in Sources */,
