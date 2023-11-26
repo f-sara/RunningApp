@@ -1,26 +1,26 @@
 //
-//  StartButtonView.swift
+//  FinishButtonView.swift
 //  RunningApp
 //
-//  Created by 藤井紗良 on 2023/11/13.
+//  Created by 藤井紗良 on 2023/11/26.
 //
 
 import SwiftUI
 
-struct StartButtonView: View {
+struct FinishButtonView: View {
     var body: some View {
         VStack(spacing: 4) {
-            Image(systemName: "location")
+            Image(systemName: "location.slash")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 42, height: 42)
+                .frame(width: 40, height: 40)
                 .foregroundColor(Color.green)
 
-            Text("ルートを記録")
-                .font(.system(size: 12))
+            Text("終了する")
+                .font(.system(size: 15))
                 .foregroundColor(Color.green)
                 .bold()
-                .padding(.bottom, 8)
+                .padding(.bottom, 5)
         }
         .frame(width: 90, height: 90)
         .background(Color.white)
@@ -28,15 +28,13 @@ struct StartButtonView: View {
         .overlay(
             RoundedRectangle(cornerRadius: 90)
                 .stroke(Color.green, lineWidth: 1.5)
-            
-        )
 
+        )
     }
 }
 
-struct StartButtonView_Previews: PreviewProvider {
+struct FinishButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        StartButtonView()
-            .previewLayout(.sizeThatFits)
+        FinishButtonView()
     }
 }
