@@ -10,7 +10,7 @@ import SwiftUI
 struct StartButtonView: View {
     var body: some View {
         VStack(spacing: 4) {
-            Image(systemName: "location.north.line.fill")
+            Image(systemName: "location")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 42, height: 42)
@@ -20,7 +20,7 @@ struct StartButtonView: View {
                 .font(.system(size: 12))
                 .foregroundColor(Color.green)
                 .bold()
-                .padding(.bottom, 10)
+                .padding(.bottom, 8)
         }
         .frame(width: 90, height: 90)
         .background(Color.white)
