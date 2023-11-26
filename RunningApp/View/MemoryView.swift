@@ -23,7 +23,7 @@ struct MemoryView: View {
 
     var body: some View {
         ZStack {
-            Color("white")
+            Color.white
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.top)
             

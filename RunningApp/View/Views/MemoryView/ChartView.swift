@@ -34,8 +34,8 @@ struct ChartView: View {
 
     var body: some View {
         ZStack {
-            Color(.white)
-                .frame(width: 380, height: 300)
+            Color("white")
+                .frame(width: 380, height: 280)
 
             switch typeOfData {
             case .step:
