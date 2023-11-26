@@ -23,7 +23,13 @@ struct MapLogView: View {
                 NavigationLink {
                     ResultView()
                 } label: {
-                    StartButtonView()
+                    FinishButtonView()
+                        .background(
+                            Color.gray.opacity(0.8)
+                                .cornerRadius(90)
+                                .shadow(color: Color.gray, radius: 3, x: 1.5, y: 1.5)
+                        )
+                        .padding(.bottom, 30)
                 }
             }
         }
