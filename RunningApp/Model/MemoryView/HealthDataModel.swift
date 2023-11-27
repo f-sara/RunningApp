@@ -69,7 +69,7 @@ struct HealthDataModel {
     func fetchStepsMonthData(completion: @escaping (Result<[Int], Error>) -> Void) {
         var updatedModel = self
 
-        let oneWeekAgo = Calendar.current.date(byAdding: .month, value: -1, to: Date())!
+        let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
         let startDate = Calendar.current.startOfDay(for: oneWeekAgo)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
 
@@ -107,7 +107,7 @@ struct HealthDataModel {
     func fetchStepsYearData(completion: @escaping (Result<[Int], Error>) -> Void) {
         var updatedModel = self
 
-        let oneWeekAgo = Calendar.current.date(byAdding: .year, value: -1, to: Date())!
+        let oneWeekAgo = Calendar.current.date(byAdding: .month, value: -12, to: Date())!
         let startDate = Calendar.current.startOfDay(for: oneWeekAgo)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
 
@@ -142,7 +142,7 @@ struct HealthDataModel {
         HKHealthStore().execute(query)
     }
 
-    func fetchKcalData(completion: @escaping (Result<[Double], Error>) -> Void) {
+    func fetchKcalWeekData(completion: @escaping (Result<[Double], Error>) -> Void) {
             var updatedModel = self
 
             let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -6, to: Date())!
@@ -180,10 +180,162 @@ struct HealthDataModel {
             HKHealthStore().execute(query)
         }
 
-    func fetchDistanceData(completion: @escaping (Result<[Double], Error>) -> Void) {
+    func fetchKcalMonthData(completion: @escaping (Result<[Double], Error>) -> Void) {
+            var updatedModel = self
+
+            let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
+            let startDate = Calendar.current.startOfDay(for: oneWeekAgo)
+            let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
+
+            let query = HKStatisticsCollectionQuery(quantityType: HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                                                    quantitySamplePredicate: predicate,
+                                                    options: .cumulativeSum,
+                                                    anchorDate: startDate,
+                                                    intervalComponents: DateComponents(day: 1))
+
+            query.initialResultsHandler = { _, results, error in
+                guard let statsCollection = results else {
+                    if let error = error {
+                        completion(.failure(error))
+                    }
+                    return
+                }
+
+                statsCollection.enumerateStatistics(from: startDate, to: Date()) { statistics, _ in
+                    if let quantity = statistics.sumQuantity() {
+                        let kcalValue = quantity.doubleValue(for: .kilocalorie())
+                        updatedModel.kcalData.append(kcalValue)
+                    } else {
+                        updatedModel.kcalData.append(0.0)
+                    }
+                }
+
+                DispatchQueue.main.async {
+                    completion(.success(updatedModel.kcalData))
+                    print("kcalData", updatedModel.kcalData)
+                }
+            }
+            HKHealthStore().execute(query)
+        }
+
+    func fetchKcalYearData(completion: @escaping (Result<[Double], Error>) -> Void) {
+            var updatedModel = self
+
+            let oneWeekAgo = Calendar.current.date(byAdding: .month, value: -12, to: Date())!
+            let startDate = Calendar.current.startOfDay(for: oneWeekAgo)
+            let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
+
+            let query = HKStatisticsCollectionQuery(quantityType: HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                                                    quantitySamplePredicate: predicate,
+                                                    options: .cumulativeSum,
+                                                    anchorDate: startDate,
+                                                    intervalComponents: DateComponents(day: 1))
+
+            query.initialResultsHandler = { _, results, error in
+                guard let statsCollection = results else {
+                    if let error = error {
+                        completion(.failure(error))
+                    }
+                    return
+                }
+
+                statsCollection.enumerateStatistics(from: startDate, to: Date()) { statistics, _ in
+                    if let quantity = statistics.sumQuantity() {
+                        let kcalValue = quantity.doubleValue(for: .kilocalorie())
+                        updatedModel.kcalData.append(kcalValue)
+                    } else {
+                        updatedModel.kcalData.append(0.0)
+                    }
+                }
+
+                DispatchQueue.main.async {
+                    completion(.success(updatedModel.kcalData))
+                    print("kcalData", updatedModel.kcalData)
+                }
+            }
+            HKHealthStore().execute(query)
+        }
+
+    func fetchDistanceWeekData(completion: @escaping (Result<[Double], Error>) -> Void) {
             var updatedModel = self
 
             let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -6, to: Date())!
+            let startDate = Calendar.current.startOfDay(for: oneWeekAgo)
+            let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
+
+            let query = HKStatisticsCollectionQuery(quantityType: HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                                                    quantitySamplePredicate: predicate,
+                                                    options: .cumulativeSum,
+                                                    anchorDate: startDate,
+                                                    intervalComponents: DateComponents(day: 1))
+
+            query.initialResultsHandler = { _, results, error in
+                guard let statsCollection = results else {
+                    if let error = error {
+                        completion(.failure(error))
+                    }
+                    return
+                }
+
+                statsCollection.enumerateStatistics(from: startDate, to: Date()) { statistics, _ in
+                    if let quantity = statistics.sumQuantity() {
+                        let distanceValue = quantity.doubleValue(for: .meter())
+                        updatedModel.distanceData.append(distanceValue)
+                    } else {
+                        updatedModel.distanceData.append(0.0)
+                    }
+                }
+
+                DispatchQueue.main.async {
+                    completion(.success(updatedModel.distanceData))
+                    print("distanceData", updatedModel.distanceData)
+                }
+            }
+            HKHealthStore().execute(query)
+        }
+
+    func fetchDistanceMonthData(completion: @escaping (Result<[Double], Error>) -> Void) {
+            var updatedModel = self
+
+            let oneWeekAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
+            let startDate = Calendar.current.startOfDay(for: oneWeekAgo)
+            let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
+
+            let query = HKStatisticsCollectionQuery(quantityType: HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                                                    quantitySamplePredicate: predicate,
+                                                    options: .cumulativeSum,
+                                                    anchorDate: startDate,
+                                                    intervalComponents: DateComponents(day: 1))
+
+            query.initialResultsHandler = { _, results, error in
+                guard let statsCollection = results else {
+                    if let error = error {
+                        completion(.failure(error))
+                    }
+                    return
+                }
+
+                statsCollection.enumerateStatistics(from: startDate, to: Date()) { statistics, _ in
+                    if let quantity = statistics.sumQuantity() {
+                        let distanceValue = quantity.doubleValue(for: .meter())
+                        updatedModel.distanceData.append(distanceValue)
+                    } else {
+                        updatedModel.distanceData.append(0.0)
+                    }
+                }
+
+                DispatchQueue.main.async {
+                    completion(.success(updatedModel.distanceData))
+                    print("distanceData", updatedModel.distanceData)
+                }
+            }
+            HKHealthStore().execute(query)
+        }
+
+    func fetchDistanceYearData(completion: @escaping (Result<[Double], Error>) -> Void) {
+            var updatedModel = self
+
+            let oneWeekAgo = Calendar.current.date(byAdding: .month, value: -12, to: Date())!
             let startDate = Calendar.current.startOfDay(for: oneWeekAgo)
             let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
 

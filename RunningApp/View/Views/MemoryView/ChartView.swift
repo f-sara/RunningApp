@@ -64,7 +64,7 @@ struct ChartView: View {
                 }
                 .frame(width: 340, height: 240)
                 .onAppear {
-                    memoryViewModel.onAppearKcalMemoryView()
+                    memoryViewModel.onAppearKcalMemoryView(howData: howData)
                 }
                 
             case .distance:
@@ -78,7 +78,7 @@ struct ChartView: View {
                 }
                 .frame(width: 340, height: 240)
                 .onAppear {
-                    memoryViewModel.onAppearDistanceMemoryView()
+                    memoryViewModel.onAppearDistanceMemoryView(howData: howData)
                 }
             }
 
