@@ -13,7 +13,7 @@ struct NormalButtonView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.blue)
-                .frame(width: 200,height: 50)
+                .frame(width: 180,height: 50)
             Text(buttonText)
                 .font(.system(size: 20))
                 .foregroundColor(.white)
