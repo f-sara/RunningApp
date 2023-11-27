@@ -32,6 +32,7 @@
 		8BE16C952B1309EB0024ECA6 /* MapLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C942B1309EB0024ECA6 /* MapLogViewModel.swift */; };
 		8BE16C982B1321C80024ECA6 /* FinishButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C972B1321C80024ECA6 /* FinishButtonView.swift */; };
 		8BE16C9A2B1348230024ECA6 /* TopTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C992B1348230024ECA6 /* TopTabView.swift */; };
+		8BE16CA32B143FCF0024ECA6 /* NormalButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16CA22B143FCF0024ECA6 /* NormalButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		8BE16C942B1309EB0024ECA6 /* MapLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLogViewModel.swift; sourceTree = "<group>"; };
 		8BE16C972B1321C80024ECA6 /* FinishButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishButtonView.swift; sourceTree = "<group>"; };
 		8BE16C992B1348230024ECA6 /* TopTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabView.swift; sourceTree = "<group>"; };
+		8BE16CA22B143FCF0024ECA6 /* NormalButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		8B6C54072AE9F7590039B467 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8BE16C9B2B143E010024ECA6 /* Measurement */,
 				8BE16C962B1321920024ECA6 /* ResultView */,
 				8BE16C722B0B2B3F0024ECA6 /* MemoryView */,
 				8B995E9A2B0077A2000FAA27 /* HomeView */,
@@ -227,6 +230,14 @@
 				8BE16C972B1321C80024ECA6 /* FinishButtonView.swift */,
 			);
 			path = ResultView;
+			sourceTree = "<group>";
+		};
+		8BE16C9B2B143E010024ECA6 /* Measurement */ = {
+			isa = PBXGroup;
+			children = (
+				8BE16CA22B143FCF0024ECA6 /* NormalButtonView.swift */,
+			);
+			path = Measurement;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 				8B6C53CD2AE8A2470039B467 /* RunningAppApp.swift in Sources */,
 				8BE16C6D2B0A041E0024ECA6 /* HealthDataModel.swift in Sources */,
 				8B995EA52B01F88E000FAA27 /* CheckView.swift in Sources */,
+				8BE16CA32B143FCF0024ECA6 /* NormalButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
