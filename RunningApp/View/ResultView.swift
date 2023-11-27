@@ -16,7 +16,7 @@ struct ResultView: View {
                 dismiss()
                 dismiss()
             } label: {
-                Text("終了")
+                NormalButtonView(buttonText: "終了")
             }
         }
         .interactiveDismissDisabled()
