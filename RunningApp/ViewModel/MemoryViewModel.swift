@@ -28,7 +28,7 @@ final class MemoryViewModel: ObservableObject {
         var data: [ChartDataModel.StepDataModel] = []
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd"
+        dateFormatter.dateFormat = "M/d"
 
 
         for (_, steps) in stepCounts.enumerated() {
@@ -91,7 +91,7 @@ final class MemoryViewModel: ObservableObject {
         var data: [ChartDataModel.KcalDataModel] = []
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd"
+        dateFormatter.dateFormat = "M/d"
 
 
         for (_, kcal) in kcalData.enumerated() {
@@ -154,7 +154,7 @@ final class MemoryViewModel: ObservableObject {
         var data: [ChartDataModel.DistanceDataModel] = []
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd"
+        dateFormatter.dateFormat = "M/d"
 
 
         for (_, distance) in distanceData.enumerated() {

@@ -49,7 +49,7 @@ struct ChartView: View {
                     .foregroundStyle(.green)
 
                 }
-                .frame(width: 340, height: 240)
+                .frame(width: 345, height: 240)
                 .onAppear {
                     memoryViewModel.onAppearStepMemoryView(howData: howData)
                 }
@@ -62,7 +62,7 @@ struct ChartView: View {
                     )
                     .foregroundStyle(.green)
                 }
-                .frame(width: 340, height: 240)
+                .frame(width: 345, height: 240)
                 .onAppear {
                     memoryViewModel.onAppearKcalMemoryView(howData: howData)
                 }
@@ -76,7 +76,7 @@ struct ChartView: View {
                     )
                     .foregroundStyle(.green)
                 }
-                .frame(width: 340, height: 240)
+                .frame(width: 345, height: 240)
                 .onAppear {
                     memoryViewModel.onAppearDistanceMemoryView(howData: howData)
                 }
