@@ -20,7 +20,7 @@ struct HomeView: View {
     var body: some View {
 
         ZStack{
-            Color("white")
+            Color("background")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.top)
 
@@ -92,7 +92,7 @@ struct HomeView: View {
 
 
                                     }
-                                    .padding(.bottom, 5)
+                                    .padding(.bottom, 2)
 
                                 }
                                 .frame(width: 360, height: 155)
@@ -116,13 +116,13 @@ struct HomeView: View {
                             HStack {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                        .fill(Color("grd1"))
+                                        .fill(Color("yellow"))
                                         .frame(width: 175, height: 180)
 
                                 }
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                        .fill(Color("grd2"))
+                                        .fill(Color("red"))
                                         .frame(width: 175, height: 185)
 
                                 }

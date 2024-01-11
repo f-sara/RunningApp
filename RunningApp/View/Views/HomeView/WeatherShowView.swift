@@ -84,11 +84,12 @@ struct WeatherShowView: View {
                         .frame(maxHeight: 100)
                 }
 
-                HStack(spacing: 19) {
-                    VStack(spacing: 8) {
+                HStack(spacing: 0) {
+                    VStack(spacing: 5) {
                         temperatureOrHumidityView(tempOrHumidity: .temperature)
                         temperatureOrHumidityView(tempOrHumidity: .humidity)
                     }
+                    .frame(width: 80)
                     VStack(alignment: .leading,spacing: 1) {
                         Text("不快指数")
                             .font(.system(size: 14.5))
@@ -105,6 +106,7 @@ struct WeatherShowView: View {
                                 .foregroundColor(Color("darkblue"))
                         }
                     }
+                    .frame(width: 90)
                 }
                 .padding(.bottom, 20)
             }
