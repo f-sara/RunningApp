@@ -32,7 +32,8 @@ final class HomeHealthViewModel: ObservableObject {
                 self.healthDataModel.fetchKcalWeekData { result in
                     switch result {
                     case .success(let kcal):
-                        self.todayKcalData = String(kcal.last ?? 10)
+                        let kcalData = round(kcal.last ?? 0)
+                        self.todayKcalData = String(kcalData)
                         print("todaykcal", self.todayKcalData)
                     case .failure(let error):
                         print(error)
@@ -43,7 +44,8 @@ final class HomeHealthViewModel: ObservableObject {
                 self.healthDataModel.fetchDistanceWeekData { result in
                     switch result {
                     case .success(let distance):
-                        self.todayDistanceData = String(distance.last ?? 10)
+                        let kmData = floor(distance.last ?? 0 * 10000)/10
+                        self.todayDistanceData = String(kmData)
                     case .failure(let error):
                         print(error)
                     }
