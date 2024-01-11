@@ -29,12 +29,14 @@ struct WeatherAPIClient {
             return
         }
 
-        AF.request(url).validate().responseDecodable(of: WeatherDataModel.self) { response in
-            switch response.result {
-            case .success(let weatherData):
-                completion(.success(weatherData))
-            case .failure(let error):
-                completion(.failure(WeatherAPIError.afError(error)))
+        Task.detached {
+            AF.request(url).validate().responseDecodable(of: WeatherDataModel.self) { response in
+                switch response.result {
+                case .success(let weatherData):
+                    completion(.success(weatherData))
+                case .failure(let error):
+                    completion(.failure(WeatherAPIError.afError(error)))
+                }
             }
         }
     }
