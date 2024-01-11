@@ -16,43 +16,49 @@ final class HomeHealthViewModel: ObservableObject {
 
     func onAppearHomeView() {
 
+        let dispatchGroup = DispatchGroup()
+
         healthDataModel.requestHealthAuthorization { success in
             if success {
-                DispatchGroup().enter()
+                dispatchGroup.enter()
                 self.healthDataModel.fetchStepsWeekData { result in
                     switch result {
                     case .success(let step):
                         self.todayStepData = String(step.last ?? 10)
+                        dispatchGroup.leave()
                     case .failure(let error):
                         print(error)
                     }
                 }
 
-                DispatchGroup().enter()
+                dispatchGroup.enter()
                 self.healthDataModel.fetchKcalWeekData { result in
                     switch result {
                     case .success(let kcal):
                         let kcalData = round(kcal.last ?? 0)
                         self.todayKcalData = String(kcalData)
                         print("todaykcal", self.todayKcalData)
+                        dispatchGroup.leave()
                     case .failure(let error):
                         print(error)
                     }
                 }
 
-                DispatchGroup().enter()
+                dispatchGroup.enter()
                 self.healthDataModel.fetchDistanceWeekData { result in
                     switch result {
                     case .success(let distance):
                         let kmData = floor(distance.last ?? 0 * 10000)/10
                         self.todayDistanceData = String(kmData)
+                        dispatchGroup.leave()
                     case .failure(let error):
                         print(error)
                     }
                 }
 
-                DispatchGroup().notify(queue: .main) {
+                dispatchGroup.notify(queue: .main) {
                     print("終わり", self.todayStepData, self.todayKcalData, self.todayDistanceData)
+                    NotificationCenter.default.post(name: .processDidFinish, object: nil)
                 }
             } else {
                 print("アクセスが許可されていません")
@@ -63,4 +69,8 @@ final class HomeHealthViewModel: ObservableObject {
 
     }
 
+}
+
+extension Notification.Name {
+    static let processDidFinish = Notification.Name("processDidFinish")
 }

@@ -100,9 +100,12 @@ struct HomeView: View {
                             .padding(.all, 10)
                             .onAppear{
                                 locationManager.requestWhenInUseAuthorization()
-                                DispatchGroup().enter()
                                 homeHealthViewModel.onAppearHomeView()
-                                DispatchGroup().notify(queue: .main) {
+                                NotificationCenter.default.addObserver(
+                                    forName: .processDidFinish,
+                                    object: nil,
+                                    queue: .main
+                                ) { notification in
                                     stepText = homeHealthViewModel.todayStepData
                                     print("stepText", homeHealthViewModel.todayStepData)
                                     kcalText = homeHealthViewModel.todayKcalData
