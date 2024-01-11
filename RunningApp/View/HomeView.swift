@@ -44,52 +44,9 @@ struct HomeView: View {
                                         .padding(.top, 7)
                                         .font(.system(size: 19))
                                     HStack(spacing: 0) {
-                                        VStack(spacing: 6) {
-                                            Image(systemName: "figure.walk")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(height: 20)
-                                                .foregroundColor(Color.black.opacity(0.6))
-                                            Text(stepText)
-                                                .font(.system(size: 30))
-                                                .bold()
-                                                .frame(height: 40)
-                                            Text("歩数")
-                                                .font(.system(size: 13))
-                                        }
-                                        .frame(width: 120, height: 110)
-
-                                        VStack(spacing: 6) {
-                                            Image(systemName: "flame")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(height: 20)
-                                                .foregroundColor(Color.black.opacity(0.6))
-
-                                            Text(kcalText)
-                                                .font(.system(size: 30))
-                                                .bold()
-                                                .frame(height: 40)
-                                            Text("消費カロリー")
-                                                .font(.system(size: 13))
-                                        }
-                                        .frame(width: 120)
-
-                                        VStack(spacing: 6) {
-                                            Image(systemName: "location")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(height: 20)
-                                                .foregroundColor(Color.black.opacity(0.6))
-                                            Text(distanceText)
-                                                .font(.system(size: 30))
-                                                .bold()
-                                                .frame(height: 40)
-                                            Text("移動距離")
-                                                .font(.system(size: 13))
-                                        }
-                                        .frame(width: 120)
-
+                                        TodayRecordView(icon: "figure.walk", data: stepText, title: "歩数")
+                                        TodayRecordView(icon: "flame", data: kcalText, title: "消費カロリー(kcal)")
+                                        TodayRecordView(icon: "location", data: distanceText, title: "移動距離(km)")
 
                                     }
                                     .padding(.bottom, 2)
