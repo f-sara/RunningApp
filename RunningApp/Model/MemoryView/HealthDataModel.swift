@@ -58,8 +58,10 @@ struct HealthDataModel {
                 }
             }
             
-            completion(.success(updatedModel.stepCounts))
-            print("stepCounts", updatedModel.stepCounts)
+            DispatchQueue.main.async {
+                completion(.success(updatedModel.stepCounts))
+                print("stepCounts", updatedModel.stepCounts)
+            }
         }
         HKHealthStore().execute(query)
     }
@@ -169,8 +171,10 @@ struct HealthDataModel {
                     updatedModel.kcalData.append(0.0)
                 }
             }
-            completion(.success(updatedModel.kcalData))
-            print("kcalData", updatedModel.kcalData)
+            DispatchQueue.main.async {
+                completion(.success(updatedModel.kcalData))
+                print("kcalData", updatedModel.kcalData)
+            }
         }
         HKHealthStore().execute(query)
     }
@@ -280,8 +284,10 @@ struct HealthDataModel {
                     updatedModel.distanceData.append(0.0)
                 }
             }
-            completion(.success(updatedModel.distanceData))
-            print("distanceData", updatedModel.distanceData)
+            DispatchQueue.main.async {
+                completion(.success(updatedModel.distanceData))
+                print("distanceData", updatedModel.distanceData)
+            }
         }
         HKHealthStore().execute(query)
     }
