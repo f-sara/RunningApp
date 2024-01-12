@@ -71,17 +71,17 @@ struct HomeView: View {
                                 }
                             } // 今日の記録
 
-                            HStack {
+                            HStack(spacing: 14) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 15, style: .continuous)
                                         .fill(Color.white)
-                                        .frame(width: 175, height: 180)
+                                        .frame(width: 168, height: 180)
 
                                 }
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 15, style: .continuous)
                                         .fill(Color.white)
-                                        .frame(width: 175, height: 185)
+                                        .frame(width: 168, height: 185)
 
                                 }
 

@@ -22,9 +22,9 @@ struct WeatherShowView: View {
         var Data: String {
             switch self {
             case .temperature:
-                return "-℃"
+                return " ℃"
             case .humidity:
-                return "-%"
+                return " %"
             }
         }
 
@@ -100,7 +100,7 @@ struct WeatherShowView: View {
                                 .bold()
                                 .foregroundColor(progressColorSet(score: weatherScore))
                         } else {
-                            Text("-")
+                            Text("  ")
                                 .font(.system(size: 37))
                                 .bold()
                                 .foregroundColor(Color("darkblue"))
