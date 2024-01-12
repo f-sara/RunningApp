@@ -20,7 +20,7 @@ struct HomeView: View {
     var body: some View {
 
         ZStack{
-            Color("background")
+            Color("white2")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .edgesIgnoringSafeArea(.top)
 
@@ -35,14 +35,15 @@ struct HomeView: View {
                             // 今日の記録
                             ZStack {
                                 RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                    .fill(Color("green"))
-                                    .frame(width: 360, height: 155)
+                                    .fill(Color.orange)
+                                    .frame(width: 350, height: 155)
 
                                 VStack(spacing: 5) {
                                     Text("今日の記録")
                                         .padding(.trailing, 235)
                                         .padding(.top, 7)
                                         .font(.system(size: 19))
+                                        .foregroundColor(Color.white.opacity(0.9))
                                     HStack(spacing: 0) {
                                         TodayRecordView(icon: "figure.walk", data: stepText, title: "歩数")
                                         TodayRecordView(icon: "flame", data: kcalText, title: "消費カロリー(kcal)")
@@ -52,7 +53,7 @@ struct HomeView: View {
                                     .padding(.bottom, 2)
 
                                 }
-                                .frame(width: 360, height: 155)
+                                .frame(width: 350, height: 155)
                             }
                             .padding(.all, 10)
                             .onAppear{
@@ -73,13 +74,13 @@ struct HomeView: View {
                             HStack {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                        .fill(Color("yellow"))
+                                        .fill(Color.white)
                                         .frame(width: 175, height: 180)
 
                                 }
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                        .fill(Color("red"))
+                                        .fill(Color.white)
                                         .frame(width: 175, height: 185)
 
                                 }

@@ -18,15 +18,17 @@ struct TodayRecordView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 20)
-                .foregroundColor(Color.black.opacity(0.6))
+                .foregroundColor(Color.white.opacity(0.6))
             Text(data)
-                .font(.system(size: 30))
+                .font(.system(size: 28))
                 .bold()
                 .frame(height: 40)
+                .foregroundColor(.white)
             Text(title)
                 .font(.system(size: 13))
+                .foregroundColor(Color.white.opacity(0.6))
         }
-        .frame(width: 120, height: 110)
+        .frame(width: 115, height: 110)
     }
 }
 

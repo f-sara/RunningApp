@@ -59,7 +59,7 @@ struct WeatherShowView: View {
         ZStack {
             Circle()
                 .fill(Color.white)
-                .frame(maxWidth: 231, maxHeight: 231)
+                .frame(maxWidth: 221, maxHeight: 221)
             Circle()
                 .stroke(lineWidth: 20)
                 .opacity(0.3)
@@ -168,10 +168,15 @@ struct WeatherShowView: View {
 
 struct WeatherShowView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherShowView(weatherViewModel: WeatherViewModel())
-            .previewLayout(.sizeThatFits)
-            .frame(maxWidth: 250, maxHeight: 250)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 20)
+        ZStack {
+            Color("green")
+            WeatherShowView(weatherViewModel: WeatherViewModel())
+                .previewLayout(.sizeThatFits)
+                .frame(maxWidth: 240, maxHeight: 240)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 20)
+        }
+
+
     }
 }
