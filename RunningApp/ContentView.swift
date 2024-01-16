@@ -25,7 +25,7 @@ struct ContentView: View {
 
                 MemoryView()
                     .tabItem {
-                        Image(systemName: "list.clipboard")
+                        Image(systemName: "chart.bar.xaxis")
                         Text("記録")
                     }
 
