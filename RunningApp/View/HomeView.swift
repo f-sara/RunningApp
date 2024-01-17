@@ -47,7 +47,7 @@ struct HomeView: View {
                                     HStack(spacing: 0) {
                                         TodayRecordView(icon: "figure.walk", data: stepText, title: "歩数")
                                         TodayRecordView(icon: "flame", data: kcalText, title: "消費カロリー(kcal)")
-                                        TodayRecordView(icon: "location", data: distanceText, title: "移動距離(km)")
+                                        TodayRecordView(icon: "location", data: distanceText, title: "推定歩行距離(km)")
 
                                     }
                                     .padding(.bottom, 2)

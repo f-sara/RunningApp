@@ -13,6 +13,7 @@ final class HomeHealthViewModel: ObservableObject {
     var todayStepData: String = ""
     var todayKcalData: String = ""
     var todayDistanceData: String = ""
+    var height: Double = 1.53
 
     func onAppearHomeView() {
 
@@ -25,6 +26,10 @@ final class HomeHealthViewModel: ObservableObject {
                     switch result {
                     case .success(let step):
                         self.todayStepData = String(step.last ?? 10)
+                        var kmData = self.height * 0.5 * Double(step.last ?? 0)
+                        kmData = kmData / 1000
+                        print(kmData)
+                        self.todayDistanceData = String(floor(kmData * 100) / 100)
                         dispatchGroup.leave()
                     case .failure(let error):
                         print(error)
@@ -38,18 +43,6 @@ final class HomeHealthViewModel: ObservableObject {
                         let kcalData = round(kcal.last ?? 0)
                         self.todayKcalData = String(kcalData)
                         print("todaykcal", self.todayKcalData)
-                        dispatchGroup.leave()
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
-
-                dispatchGroup.enter()
-                self.healthDataModel.fetchDistanceWeekData { result in
-                    switch result {
-                    case .success(let distance):
-                        let kmData = floor(distance.last ?? 0 * 10000)/10
-                        self.todayDistanceData = String(kmData)
                         dispatchGroup.leave()
                     case .failure(let error):
                         print(error)
