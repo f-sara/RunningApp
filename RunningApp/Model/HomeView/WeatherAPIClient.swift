@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 struct WeatherAPIClient {
-    let apiKey = "APIキー"
+    let apiKey = ProcessInfo.processInfo.environment["apiKey"]
     let baseURL: URL? = URL(string: "https://api.openweathermap.org/data/2.5/weather")
     func fetchWeatherData(latitude: Double, longitude: Double, completion: @escaping (Result<WeatherDataModel, WeatherAPIError>) -> Void) {
         var urlComponents = URLComponents(
