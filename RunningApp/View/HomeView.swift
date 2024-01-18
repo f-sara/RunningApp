@@ -27,9 +27,9 @@ struct HomeView: View {
 
             VStack(spacing: 0) {
                 WeatherShowView(weatherViewModel: WeatherViewModel())
-                    .frame(maxWidth: 240, maxHeight: 240)
-                    .padding(.all, 5)
-
+                    .frame(maxWidth: 230, maxHeight: 230)
+                    .padding(.top, 7)
+                    .padding(.bottom, 15)
                 VStack(spacing: 0) {
                     // 今日の記録
                     ZStack {

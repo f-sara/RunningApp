@@ -59,12 +59,12 @@ struct WeatherShowView: View {
         ZStack {
             Circle()
                 .fill(Color.white)
-                .frame(maxWidth: 221, maxHeight: 221)
+                .frame(maxWidth: 212, maxHeight: 212)
             Circle()
                 .stroke(lineWidth: 20)
                 .opacity(0.3)
                 .foregroundColor(progressColorSet(score: weatherViewModel.otherWeatherData?.weatherScore))
-                .frame(maxWidth: 300, maxHeight: 300)
+                .frame(maxWidth: 230, maxHeight: 230)
                 .scaledToFit()
 
             Circle()
@@ -72,16 +72,16 @@ struct WeatherShowView: View {
                 .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
                 .foregroundColor(progressColorSet(score: weatherViewModel.otherWeatherData?.weatherScore))
                 .rotationEffect(Angle(degrees: 270.0))
-                .frame(maxWidth: 300, maxHeight: 300)
+                .frame(maxWidth: 230, maxHeight: 230)
                 .scaledToFit()
-            VStack(spacing: 6) {
+            VStack(spacing: 0) {
                 AsyncImage(url: URL(string:weatherViewModel.otherWeatherData?.weatherImageURL ?? "")) { image in
                     image
                         .scaledToFit()
-                        .frame(maxHeight: 100)
+                        .frame(maxHeight: 80)
                 } placeholder: {
                     ProgressView()
-                        .frame(maxHeight: 100)
+                        .frame(maxHeight: 80)
                 }
 
                 HStack(spacing: 0) {
