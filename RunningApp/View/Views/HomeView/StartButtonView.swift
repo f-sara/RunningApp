@@ -8,27 +8,50 @@
 import SwiftUI
 
 struct StartButtonView: View {
+//    var body: some View {
+//        VStack(spacing: 4) {
+//            Image(systemName: "location.fill")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: 42, height: 42)
+//                .foregroundColor(Color.green)
+//
+//            Text("ルートを記録")
+//                .font(.system(size: 11))
+//                .foregroundColor(Color.green)
+//                .bold()
+//                .padding(.bottom, 8)
+//        }
+//        .frame(width: 90, height: 90)
+//        .background(Color.white)
+//        .cornerRadius(90)
+//        .overlay(
+//            RoundedRectangle(cornerRadius: 90)
+//                .stroke(Color.green, lineWidth: 1.5)
+//            
+//        )
+//
+//    }
     var body: some View {
-        VStack(spacing: 4) {
+        HStack(spacing: 9) {
             Image(systemName: "location.fill")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 42, height: 42)
+                .frame(width: 30, height: 30)
                 .foregroundColor(Color.green)
 
             Text("ルートを記録")
-                .font(.system(size: 11))
+                .font(.system(size: 20))
                 .foregroundColor(Color.green)
                 .bold()
-                .padding(.bottom, 8)
         }
-        .frame(width: 90, height: 90)
+        .frame(width: 170, height: 60)
         .background(Color.white)
-        .cornerRadius(90)
+        .cornerRadius(5)
         .overlay(
-            RoundedRectangle(cornerRadius: 90)
+            RoundedRectangle(cornerRadius: 5)
                 .stroke(Color.green, lineWidth: 1.5)
-            
+
         )
 
     }
