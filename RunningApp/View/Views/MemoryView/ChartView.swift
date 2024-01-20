@@ -32,10 +32,9 @@ struct ChartView: View {
 
     }
     
-
     var body: some View {
         ZStack {
-            Color("white")
+            Color("background")
                 .frame(width: 380, height: 280)
 
             switch typeOfData {
@@ -86,14 +85,3 @@ struct ChartView: View {
         }
     }
 }
-
-//struct ChartView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            ChartView(typeOfData: .step, howData: .month)
-//            ChartView(typeOfData: .kcal)
-//            ChartView(typeOfData: .distance)
-//        }
-//        .previewLayout(.sizeThatFits)
-//    }
-//}

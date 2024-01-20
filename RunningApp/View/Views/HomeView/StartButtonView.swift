@@ -33,19 +33,20 @@ struct StartButtonView: View {
 //
 //    }
     var body: some View {
-        HStack(spacing: 9) {
-            Image(systemName: "location.fill")
+        HStack(spacing: 6) {
+            Image(systemName: "chart.bar.xaxis")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 30, height: 30)
+                .frame(width: 30, height: 35)
                 .foregroundColor(Color.green)
 
-            Text("ルートを記録")
+            Text("過去の記録を確認する")
                 .font(.system(size: 20))
                 .foregroundColor(Color.green)
+            
                 .bold()
         }
-        .frame(width: 170, height: 60)
+        .frame(width: 250, height: 60)
         .background(Color.white)
         .cornerRadius(5)
         .overlay(
