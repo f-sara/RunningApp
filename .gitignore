@@ -22,6 +22,19 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 
+### Xcode Patch ###
+### プロジェクトファイルのパッケージ（ディレクトリ）の全体を除外し、必要なものだけ追加（除外からの除外）
+*.xcodeproj/*
+### プロジェクトの構成情報を格納するファイル
+!*.xcodeproj/project.pbxproj
+### XcodeのプロジェクトのビルドSchemeを格納するファイル
+!*.xcodeproj/xcshareddata/
+### プロジェクトのワークスペースのデータを格納するXMLファイル
+!*.xcworkspace/contents.xcworkspacedata
+
+### 「File > Workspace Settings」で設定できるワークスペースの設定値。
+**/xcshareddata/WorkspaceSettings.xcsettings
+
 ## Obj-C/Swift specific
 *.hmap
 
