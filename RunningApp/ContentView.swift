@@ -25,8 +25,8 @@ struct ContentView: View {
 
                 PersonalSettingView()
                     .tabItem {
-                        Image(systemName: "person")
-                        Text("アカウント")
+                        Image(systemName: "gearshape.fill")
+                        Text("設定")
                     }
 
 
