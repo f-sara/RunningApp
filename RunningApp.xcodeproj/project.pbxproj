@@ -12,6 +12,7 @@
 		8B6C53D12AE8A2480039B467 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6C53D02AE8A2480039B467 /* Assets.xcassets */; };
 		8B6C53D42AE8A2480039B467 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6C53D32AE8A2480039B467 /* Preview Assets.xcassets */; };
 		8B6C54052AE9E5090039B467 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C54042AE9E5090039B467 /* HomeView.swift */; };
+		8B6EE38A2B4F6D4400D596C6 /* TodayRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EE3892B4F6D4400D596C6 /* TodayRecordView.swift */; };
 		8B995E902B0072F6000FAA27 /* WeatherShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995E8F2B0072F6000FAA27 /* WeatherShowView.swift */; };
 		8B995E942B0074C5000FAA27 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995E932B0074C5000FAA27 /* WeatherDataModel.swift */; };
 		8B995E992B00766A000FAA27 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B995E982B00766A000FAA27 /* Alamofire */; };
@@ -21,6 +22,7 @@
 		8B995EA72B02010F000FAA27 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA62B02010F000FAA27 /* RecordView.swift */; };
 		8B995EA92B020133000FAA27 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA82B020133000FAA27 /* MemoryView.swift */; };
 		8B995EAB2B02016E000FAA27 /* PersonalSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EAA2B02016E000FAA27 /* PersonalSettingView.swift */; };
+		8BBCAF832B4CF1AF006E6269 /* HomeHealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCAF822B4CF1AF006E6269 /* HomeHealthViewModel.swift */; };
 		8BE16C662B079FB00024ECA6 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */; };
 		8BE16C6D2B0A041E0024ECA6 /* HealthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */; };
 		8BE16C6F2B0A0F380024ECA6 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */; };
@@ -42,6 +44,7 @@
 		8B6C53D02AE8A2480039B467 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B6C53D32AE8A2480039B467 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B6C54042AE9E5090039B467 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8B6EE3892B4F6D4400D596C6 /* TodayRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecordView.swift; sourceTree = "<group>"; };
 		8B995E8F2B0072F6000FAA27 /* WeatherShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherShowView.swift; sourceTree = "<group>"; };
 		8B995E932B0074C5000FAA27 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		8B995E9C2B01BD6E000FAA27 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		8B995EA62B02010F000FAA27 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		8B995EA82B020133000FAA27 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		8B995EAA2B02016E000FAA27 /* PersonalSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingView.swift; sourceTree = "<group>"; };
+		8BBCAF822B4CF1AF006E6269 /* HomeHealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHealthViewModel.swift; sourceTree = "<group>"; };
 		8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
 		8BE16C692B09D3DC0024ECA6 /* RunningApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningApp.entitlements; sourceTree = "<group>"; };
 		8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
@@ -139,7 +143,7 @@
 		8B6C54032AE8DF500039B467 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8B995E9C2B01BD6E000FAA27 /* WeatherViewModel.swift */,
+				8BBCAF812B4CF153006E6269 /* HomeView */,
 				8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */,
 				8BE16C942B1309EB0024ECA6 /* MapLogViewModel.swift */,
 			);
@@ -171,6 +175,7 @@
 			children = (
 				8B995E8F2B0072F6000FAA27 /* WeatherShowView.swift */,
 				8B995E9E2B01F0B4000FAA27 /* StartButtonView.swift */,
+				8B6EE3892B4F6D4400D596C6 /* TodayRecordView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -194,6 +199,15 @@
 				8BE16C902B11F6AB0024ECA6 /* ResultView.swift */,
 			);
 			name = Measurement;
+			sourceTree = "<group>";
+		};
+		8BBCAF812B4CF153006E6269 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				8B995E9C2B01BD6E000FAA27 /* WeatherViewModel.swift */,
+				8BBCAF822B4CF1AF006E6269 /* HomeHealthViewModel.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 		8BE16C672B09D3540024ECA6 /* HomeView */ = {
@@ -271,7 +285,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					8B6C53C82AE8A2470039B467 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -323,6 +337,7 @@
 				8BE16C912B11F6AB0024ECA6 /* ResultView.swift in Sources */,
 				8B995E942B0074C5000FAA27 /* WeatherDataModel.swift in Sources */,
 				8BE16C9A2B1348230024ECA6 /* TopTabView.swift in Sources */,
+				8BBCAF832B4CF1AF006E6269 /* HomeHealthViewModel.swift in Sources */,
 				8B995EA92B020133000FAA27 /* MemoryView.swift in Sources */,
 				8B995EA72B02010F000FAA27 /* RecordView.swift in Sources */,
 				8B6C54052AE9E5090039B467 /* HomeView.swift in Sources */,
@@ -331,6 +346,7 @@
 				8BE16C6F2B0A0F380024ECA6 /* MemoryViewModel.swift in Sources */,
 				8BE16C792B0D9C6C0024ECA6 /* ChartDataView.swift in Sources */,
 				8B995E9F2B01F0B4000FAA27 /* StartButtonView.swift in Sources */,
+				8B6EE38A2B4F6D4400D596C6 /* TodayRecordView.swift in Sources */,
 				8BE16C662B079FB00024ECA6 /* WeatherAPIClient.swift in Sources */,
 				8B995E9D2B01BD6E000FAA27 /* WeatherViewModel.swift in Sources */,
 				8BE16C712B0AE4CE0024ECA6 /* ChartDataModel.swift in Sources */,

@@ -17,15 +17,9 @@ struct ContentView: View {
                         Text("ホーム")
                     }
 
-                RecordView()
-                    .tabItem {
-                        Image(systemName: "map")
-                        Text("履歴")
-                    }
-
                 MemoryView()
                     .tabItem {
-                        Image(systemName: "list.clipboard")
+                        Image(systemName: "chart.bar.xaxis")
                         Text("記録")
                     }
 

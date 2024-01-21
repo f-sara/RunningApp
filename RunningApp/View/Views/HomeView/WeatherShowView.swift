@@ -22,9 +22,9 @@ struct WeatherShowView: View {
         var Data: String {
             switch self {
             case .temperature:
-                return "-℃"
+                return " ℃"
             case .humidity:
-                return "-%"
+                return " %"
             }
         }
 
@@ -59,12 +59,12 @@ struct WeatherShowView: View {
         ZStack {
             Circle()
                 .fill(Color.white)
-                .frame(maxWidth: 231, maxHeight: 231)
+                .frame(maxWidth: 212, maxHeight: 212)
             Circle()
                 .stroke(lineWidth: 20)
                 .opacity(0.3)
                 .foregroundColor(progressColorSet(score: weatherViewModel.otherWeatherData?.weatherScore))
-                .frame(maxWidth: 300, maxHeight: 300)
+                .frame(maxWidth: 230, maxHeight: 230)
                 .scaledToFit()
 
             Circle()
@@ -72,23 +72,24 @@ struct WeatherShowView: View {
                 .stroke(style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
                 .foregroundColor(progressColorSet(score: weatherViewModel.otherWeatherData?.weatherScore))
                 .rotationEffect(Angle(degrees: 270.0))
-                .frame(maxWidth: 300, maxHeight: 300)
+                .frame(maxWidth: 230, maxHeight: 230)
                 .scaledToFit()
-            VStack(spacing: 6) {
+            VStack(spacing: 0) {
                 AsyncImage(url: URL(string:weatherViewModel.otherWeatherData?.weatherImageURL ?? "")) { image in
                     image
                         .scaledToFit()
-                        .frame(maxHeight: 100)
+                        .frame(maxHeight: 80)
                 } placeholder: {
                     ProgressView()
-                        .frame(maxHeight: 100)
+                        .frame(maxHeight: 80)
                 }
 
-                HStack(spacing: 19) {
-                    VStack(spacing: 8) {
+                HStack(spacing: 0) {
+                    VStack(spacing: 5) {
                         temperatureOrHumidityView(tempOrHumidity: .temperature)
                         temperatureOrHumidityView(tempOrHumidity: .humidity)
                     }
+                    .frame(width: 80)
                     VStack(alignment: .leading,spacing: 1) {
                         Text("不快指数")
                             .font(.system(size: 14.5))
@@ -99,12 +100,13 @@ struct WeatherShowView: View {
                                 .bold()
                                 .foregroundColor(progressColorSet(score: weatherScore))
                         } else {
-                            Text("-")
+                            Text("  ")
                                 .font(.system(size: 37))
                                 .bold()
                                 .foregroundColor(Color("darkblue"))
                         }
                     }
+                    .frame(width: 90)
                 }
                 .padding(.bottom, 20)
             }
@@ -166,10 +168,15 @@ struct WeatherShowView: View {
 
 struct WeatherShowView_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherShowView(weatherViewModel: WeatherViewModel())
-            .previewLayout(.sizeThatFits)
-            .frame(maxWidth: 250, maxHeight: 250)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 20)
+        ZStack {
+            Color("green")
+            WeatherShowView(weatherViewModel: WeatherViewModel())
+                .previewLayout(.sizeThatFits)
+                .frame(maxWidth: 240, maxHeight: 240)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 20)
+        }
+
+
     }
 }
