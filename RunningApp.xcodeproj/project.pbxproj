@@ -23,6 +23,7 @@
 		8B995EA92B020133000FAA27 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EA82B020133000FAA27 /* MemoryView.swift */; };
 		8B995EAB2B02016E000FAA27 /* PersonalSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B995EAA2B02016E000FAA27 /* PersonalSettingView.swift */; };
 		8BBCAF832B4CF1AF006E6269 /* HomeHealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCAF822B4CF1AF006E6269 /* HomeHealthViewModel.swift */; };
+		8BBCC35B2B5D1DD6008391F4 /* PersonalSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCC35A2B5D1DD6008391F4 /* PersonalSettingModel.swift */; };
 		8BE16C662B079FB00024ECA6 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */; };
 		8BE16C6D2B0A041E0024ECA6 /* HealthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */; };
 		8BE16C6F2B0A0F380024ECA6 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE16C6E2B0A0F380024ECA6 /* MemoryViewModel.swift */; };
@@ -54,6 +55,7 @@
 		8B995EA82B020133000FAA27 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		8B995EAA2B02016E000FAA27 /* PersonalSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingView.swift; sourceTree = "<group>"; };
 		8BBCAF822B4CF1AF006E6269 /* HomeHealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHealthViewModel.swift; sourceTree = "<group>"; };
+		8BBCC35A2B5D1DD6008391F4 /* PersonalSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalSettingModel.swift; sourceTree = "<group>"; };
 		8BE16C652B079FB00024ECA6 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
 		8BE16C692B09D3DC0024ECA6 /* RunningApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunningApp.entitlements; sourceTree = "<group>"; };
 		8BE16C6C2B0A041E0024ECA6 /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				8BE16C672B09D3540024ECA6 /* HomeView */,
 				8BE16C682B09D38A0024ECA6 /* MemoryView */,
+				8BBCC35A2B5D1DD6008391F4 /* PersonalSettingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				8BE16C712B0AE4CE0024ECA6 /* ChartDataModel.swift in Sources */,
 				8BE16C952B1309EB0024ECA6 /* MapLogViewModel.swift in Sources */,
 				8B6C53CD2AE8A2470039B467 /* RunningAppApp.swift in Sources */,
+				8BBCC35B2B5D1DD6008391F4 /* PersonalSettingModel.swift in Sources */,
 				8BE16C6D2B0A041E0024ECA6 /* HealthDataModel.swift in Sources */,
 				8B995EA52B01F88E000FAA27 /* CheckView.swift in Sources */,
 				8BE16CA32B143FCF0024ECA6 /* NormalButtonView.swift in Sources */,

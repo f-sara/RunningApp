@@ -49,9 +49,16 @@ struct PersonalSettingView: View {
         }
         .scrollContentBackground(.hidden)
         .background(Color("testcolor"))
+        .onTapGesture {
+            UIApplication.shared.closeKeyboard()
+        }
     }
+}
 
-
+extension UIApplication {
+    func closeKeyboard() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 }
 
 struct PersonalSettingView_Previews: PreviewProvider {
