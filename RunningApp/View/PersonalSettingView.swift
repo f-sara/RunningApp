@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct PersonalSettingView: View {
-    @ObservedObject var viewModel = PersonalSettingViewModel()
-    let mode = ["ランニングモード", "ウォーキングモード"]
-    @State var selected = 0
-    @State var selected2 = 0
+    private let viewModel = PersonalSettingViewModel()
+
+    @State var selectedMode = 0
+    @State var selectedSteps = 0
     @State private var height = "160"
-    let steps = [5000, 5500, 6000, 6500, 7000, 7500, 8000, 8500, 9000, 9500, 10000, 15000]
 
     @FocusState var focus:Bool
 
@@ -29,67 +28,66 @@ struct PersonalSettingView: View {
     var body: some View {
 
         Form {
+
             Section {
-                Picker(selection: $selected,
+                Picker(selection: $selectedMode,
                        label: Text("アプリモード")) {
                     ForEach(0..<2) {
-                        Text(self.mode[$0])
+                        Text(self.viewModel.appMode[$0])
                     }
-                    .onChange(of: selected) {
-                        UserDefaults.standard.set(mode[selected], forKey: "appMode")
+                    .onChange(of: selectedMode) {
+                        viewModel.saveAppMode(viewModel.appMode[selectedMode])
                     }
                 }
-
-
-        } header: {
-            Text("アプリの設定")
-        }
-
-
-        Section {
-            HStack {
-                Text("身長")
-                Spacer()
-                TextField("身長を入力", text: $height)
-                    .focused(self.$focus)
-                    .foregroundColor(.gray)
-                    .keyboardType(.numberPad)
-                    .multilineTextAlignment(.trailing)
-                    .onChange(of: height) {
-                        UserDefaults.standard.set(height, forKey: "userHeight")
-                    }
-                Text("cm")
-                    .foregroundColor(.gray)
+            } header: {
+                Text("アプリの設定")
             }
-            Picker(selection: $selected2, label: Text("目標歩数")) {
-                ForEach(steps.indices, id: \.self) { index in
-                    Text("\(self.steps[index])")
+
+
+            Section {
+                HStack {
+                    Text("身長")
+                    Spacer()
+                    TextField("身長を入力", text: $height)
+                        .focused(self.$focus)
+                        .foregroundColor(.gray)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.trailing)
+                        .onChange(of: height) {
+                            viewModel.saveUserHeight(viewModel.userHeight)
+                        }
+                    Text("cm")
+                        .foregroundColor(.gray)
                 }
+                Picker(selection: $selectedSteps, label: Text("目標歩数")) {
+                    ForEach(viewModel.steps.indices, id: \.self) { index in
+                        Text("\(self.viewModel.steps[index])")
+                    }
+                }
+                .onChange(of: selectedSteps) {
+                    guard viewModel.steps.indices.contains(selectedSteps) else { return }
+                    viewModel.saveStepGoal(viewModel.steps[selectedSteps])
+                }
+            } header: {
+                Text("あなたのデータ")
             }
-            .onChange(of: selected2) {
-                guard steps.indices.contains(selected2) else { return }
-                    UserDefaults.standard.set(steps[selected2], forKey: "stepGoal")
-            }
-        } header: {
-            Text("あなたのデータ")
         }
-    }
         .gesture(self.gesture)
         .scrollContentBackground(.hidden)
         .background(Color("testcolor"))
         .onAppear {
             if let storedAppMode = UserDefaults.standard.string(forKey: "appMode"),
-               let index = mode.firstIndex(of: storedAppMode) {
-                selected = index
+               let index = viewModel.appMode.firstIndex(of: storedAppMode) {
+                selectedMode = index
             }
             if let storedHeight = UserDefaults.standard.string(forKey: "userHeight") {
                 height = storedHeight
             }
             let storedStepGoal = UserDefaults.standard.integer(forKey: "stepGoal")
-            guard let selected2 = steps.firstIndex(of: storedStepGoal) else {return}
+            selectedSteps = viewModel.steps.firstIndex(of: storedStepGoal) ?? 0
         }
 
-}
+    }
 }
 
 struct PersonalSettingView_Previews: PreviewProvider {
