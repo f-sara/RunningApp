@@ -11,13 +11,31 @@ import MapKit
 struct HomeView: View {
     @State private var showSheet: Bool = false
     @State private var locationManager = CLLocationManager()
-    var homeHealthViewModel = HomeHealthViewModel()
+    let viewModel = HomeHealthViewModel()
 
-    @State var stepText: String = ""
-    @State var kcalText: String = ""
-    @State var distanceText: String = ""
-    @State var restStep: String = ""
-    @State var restMinute: String = "　　"
+    @State private var stepText: String = ""
+    @State private var kcalText: String = ""
+    @State private var distanceText: String = ""
+    @State private var restStep: String = ""
+
+    @State private var restWalkingMinute: String = "   "
+    @State private var restRunningMinute: String = "   "
+    @State private var appMode: String = "ランニングモード"
+    @State private var stepGoal: Int = 7000
+
+    enum AppMode {
+        case running
+        case walking
+
+        var text: String {
+            switch self {
+            case .running:
+                return "走ってみましょう"
+            case .walking:
+                return "歩いてみましょう"
+            }
+        }
+    }
 
     var body: some View {
 
@@ -51,26 +69,28 @@ struct HomeView: View {
 
                             }
                             .padding(.bottom, 2)
-
                         }
                         .frame(width: 350, height: 155)
                     }
                     .padding(.bottom, 10)
                     .onAppear{
                         locationManager.requestWhenInUseAuthorization()
-                        homeHealthViewModel.onAppearHomeView()
+                        viewModel.onAppearHomeView()
                         NotificationCenter.default.addObserver(
                             forName: .processDidFinish,
                             object: nil,
                             queue: .main
                         ) { notification in
-                            stepText = homeHealthViewModel.todayStepData
-                            print("stepText", homeHealthViewModel.todayStepData)
-                            kcalText = homeHealthViewModel.todayKcalData
-                            distanceText = homeHealthViewModel.todayDistanceData
-                            restStep = String(7000 - (Int(homeHealthViewModel.todayStepData) ?? 0))
-                            restMinute = String(Int(round(0.8 * (Double(restStep) ?? 0) / 60)))
-                            print("残り\(restMinute)")
+                            appMode = UserDefaults.standard.string(forKey: "appMode") ?? "ランニングモード"
+                            stepGoal = UserDefaults.standard.integer(forKey: "stepGoal")
+                            stepText = viewModel.todayStepData
+                            print("stepText", viewModel.todayStepData)
+                            kcalText = viewModel.todayKcalData
+                            distanceText = viewModel.todayDistanceData
+                            restStep = String(stepGoal - (Int(viewModel.todayStepData) ?? 0))
+                            restWalkingMinute = String(Int(round(0.8 * (Double(restStep) ?? 0) / 60)))
+                            restRunningMinute = String(Int(round(0.5 * (Double(restStep) ?? 0) / 60)))
+                            print("残り\(restWalkingMinute)")
                         }
                     } // 今日の記録終わり
 
@@ -103,14 +123,27 @@ struct HomeView: View {
 
                                 VStack(spacing: 1) {
                                     HStack(spacing: 4) {
-                                        Text("あと\(restMinute)分ほど")
-                                            .font(.system(size: 17))
+                                        if appMode == "ランニングモード" {
+                                            Text("あと\(restRunningMinute)分ほど")
+                                                .font(.system(size: 17))
+                                        } else {
+                                            Text("あと\(restWalkingMinute)分ほど")
+                                                .font(.system(size: 17))
+                                        }
+
 
                                     }
                                     .padding(.trailing, 30)
-                                    Text("歩いてみましょう")
-                                        .padding(.leading, 26)
-                                        .font(.system(size: 17))
+                                    if appMode == "ランニングモード" {
+                                        Text(AppMode.running.text)
+                                            .padding(.leading, 26)
+                                            .font(.system(size: 17))
+                                    } else {
+                                        Text(AppMode.walking.text)
+                                            .padding(.leading, 26)
+                                            .font(.system(size: 17))
+                                    }
+
                                 }
                             }
                             .frame(width: 180, height: 85)
@@ -140,6 +173,7 @@ struct HomeView: View {
                     }
                     .frame(width: 350, height: 170)
                     .padding(.bottom, 10)
+
 
                     Button {
                         showSheet.toggle()
