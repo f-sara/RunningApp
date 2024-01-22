@@ -22,9 +22,9 @@ struct HomeView: View {
     var body: some View {
 
         ZStack{
-            Color("white2")
+            Color("testcolor")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.top)
+                .edgesIgnoringSafeArea(.all)
 
             VStack(spacing: 0) {
                 WeatherShowView(weatherViewModel: WeatherViewModel())
