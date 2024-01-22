@@ -13,7 +13,13 @@ final class HomeHealthViewModel: ObservableObject {
     var todayStepData: String = ""
     var todayKcalData: String = ""
     var todayDistanceData: String = ""
-    var height: Double = 1.53
+    var height: Double {
+        if let userHeightString = UserDefaults.standard.string(forKey: "userHeight"),
+           let userHeight = Double(userHeightString) {
+            return userHeight / 100
+        }
+        return 0.0
+    }
 
     func onAppearHomeView() {
 

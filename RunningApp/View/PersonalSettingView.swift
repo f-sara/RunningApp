@@ -54,7 +54,7 @@ struct PersonalSettingView: View {
                         .keyboardType(.numberPad)
                         .multilineTextAlignment(.trailing)
                         .onChange(of: height) {
-                            viewModel.saveUserHeight(viewModel.userHeight)
+                            viewModel.saveUserHeight(height)
                         }
                     Text("cm")
                         .foregroundColor(.gray)
