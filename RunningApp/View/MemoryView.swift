@@ -25,10 +25,10 @@ struct MemoryView: View {
 
     var body: some View {
         ZStack {
-            Color.white
+            Color("testcolor")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.top)
-            
+                .edgesIgnoringSafeArea(.all)
+
             VStack(spacing: 0) {
                 Picker("データ", selection: $dataType) {
                     ForEach(HowData.allCases) {
@@ -40,6 +40,7 @@ struct MemoryView: View {
                 .padding(.horizontal, 30)
                 .padding(.top, 20)
                 .padding(.bottom, 10)
+                .background(Color("testcolor"))
 
                 TabView(selection: $selectedTab, content: {
                     switch dataType {
@@ -85,7 +86,9 @@ struct MemoryView: View {
                     }
 
 
+
                 })
+                .background(Color("testcolor"))
 
                 TopTabView(list: list, selectedTab: $selectedTab)
                 ScrollView {
@@ -105,10 +108,12 @@ struct MemoryView: View {
 
     }
 
-    struct MemoryView_Previews: PreviewProvider {
-        static var previews: some View {
-            MemoryView()
-                .previewLayout(.sizeThatFits)
-        }
+
+}
+
+struct MemoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        MemoryView()
+            .previewLayout(.sizeThatFits)
     }
 }
